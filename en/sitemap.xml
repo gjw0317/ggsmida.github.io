@@ -11,6 +11,15 @@
                     hreflang="en"
                     href="http://localhost:1313/en/about/"
                     /></url><url>
+            <loc>http://localhost:1313/en/sponsor/</loc><lastmod>2023-09-04T06:00:00&#43;08:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="http://localhost:1313/sponsor/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/en/sponsor/"
+                    /></url><url>
             <loc>http://localhost:1313/en/tags/ai/</loc><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -29,6 +38,15 @@
                     hreflang="en"
                     href="http://localhost:1313/en/categories/"
                     /></url><url>
+            <loc>http://localhost:1313/en/categories/document/</loc><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="http://localhost:1313/categories/document/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/en/categories/document/"
+                    /></url><url>
             <loc>http://localhost:1313/en/</loc><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -37,6 +55,15 @@
                     rel="alternate"
                     hreflang="en"
                     href="http://localhost:1313/en/"
+                    /></url><url>
+            <loc>http://localhost:1313/en/categories/life-essays/</loc><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="http://localhost:1313/categories/life-essays/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/en/categories/life-essays/"
                     /></url><url>
             <loc>http://localhost:1313/en/tags/</loc><xhtml:link
                         rel="alternate"
