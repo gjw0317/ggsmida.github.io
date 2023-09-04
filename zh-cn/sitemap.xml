@@ -2,6 +2,16 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>http://localhost:1313/about/</loc><lastmod>2023-09-04T06:00:00&#43;08:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://localhost:1313/en/about/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="http://localhost:1313/about/"
+                    /></url><url>
+            <loc>http://localhost:1313/sponsor/</loc><lastmod>2023-09-04T06:00:00&#43;08:00</lastmod></url><url>
             <loc>http://localhost:1313/tags/ai/</loc><lastmod>2020-03-05T16:30:05&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
