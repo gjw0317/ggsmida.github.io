@@ -2,6 +2,69 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>http://localhost:1313/en/tags/ai/</loc><lastmod>2023-09-04T22:00:00&#43;08:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="http://localhost:1313/tags/ai/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/en/tags/ai/"
+                    /></url><url>
+            <loc>http://localhost:1313/en/categories/</loc><lastmod>2023-09-04T22:00:00&#43;08:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="http://localhost:1313/categories/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/en/categories/"
+                    /></url><url>
+            <loc>http://localhost:1313/en/categories/document/</loc><lastmod>2023-09-04T22:00:00&#43;08:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="http://localhost:1313/categories/document/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/en/categories/document/"
+                    /></url><url>
+            <loc>http://localhost:1313/en/</loc><lastmod>2023-09-04T22:00:00&#43;08:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="http://localhost:1313/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/en/"
+                    /></url><url>
+            <loc>http://localhost:1313/en/posts/</loc><lastmod>2023-09-04T22:00:00&#43;08:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="http://localhost:1313/posts/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/en/posts/"
+                    /></url><url>
+            <loc>http://localhost:1313/en/tags/</loc><lastmod>2023-09-04T22:00:00&#43;08:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="http://localhost:1313/tags/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/en/tags/"
+                    /></url><url>
+            <loc>http://localhost:1313/en/posts/build_a_personal_blog/</loc><lastmod>2023-09-04T22:00:00&#43;08:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="http://localhost:1313/posts/build_a_personal_blog/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/en/posts/build_a_personal_blog/"
+                    /></url><url>
             <loc>http://localhost:1313/en/about/</loc><lastmod>2023-09-04T06:00:00&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -20,42 +83,6 @@
                     hreflang="en"
                     href="http://localhost:1313/en/sponsor/"
                     /></url><url>
-            <loc>http://localhost:1313/en/tags/ai/</loc><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/tags/ai/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://localhost:1313/en/tags/ai/"
-                    /></url><url>
-            <loc>http://localhost:1313/en/categories/</loc><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/categories/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://localhost:1313/en/categories/"
-                    /></url><url>
-            <loc>http://localhost:1313/en/categories/document/</loc><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/categories/document/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://localhost:1313/en/categories/document/"
-                    /></url><url>
-            <loc>http://localhost:1313/en/</loc><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://localhost:1313/en/"
-                    /></url><url>
             <loc>http://localhost:1313/en/categories/life-essays/</loc><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -64,13 +91,4 @@
                     rel="alternate"
                     hreflang="en"
                     href="http://localhost:1313/en/categories/life-essays/"
-                    /></url><url>
-            <loc>http://localhost:1313/en/tags/</loc><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://localhost:1313/tags/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://localhost:1313/en/tags/"
                     /></url></urlset>

@@ -4,16 +4,13 @@
         <link>http://localhost:1313/categories/document/</link>
         <description>文档 - 分类 - ggsmida的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>g_gsmida@163.com (junwu.gjw)</managingEditor>
-            <webMaster>g_gsmida@163.com (junwu.gjw)</webMaster><lastBuildDate>Thu, 05 Mar 2020 16:30:05 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/document/" rel="self" type="application/rss+xml" /><item>
-    <title>test file</title>
-    <link>http://localhost:1313/posts/first_post/</link>
-    <pubDate>Thu, 05 Mar 2020 16:30:05 &#43;0800</pubDate>
+            <webMaster>g_gsmida@163.com (junwu.gjw)</webMaster><lastBuildDate>Mon, 04 Sep 2023 22:00:00 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/document/" rel="self" type="application/rss+xml" /><item>
+    <title>使用hugo &#43; LoveIt &#43; GitHub &#43; Giscus搭建个人博客</title>
+    <link>http://localhost:1313/posts/build_a_personal_blog/</link>
+    <pubDate>Mon, 04 Sep 2023 22:00:00 &#43;0800</pubDate>
     <author>junwu.gjw</author>
-    <guid>http://localhost:1313/posts/first_post/</guid>
-    <description><![CDATA[{{&lt; music url=&quot;/music/Wavelength.mp3&quot; name=Wavelength artist=oldmanyoung cover=&quot;/images/profile.JPG&quot; &gt;}}
-this is a test hello
-world
-#!/bin/sh echo &#34;hello&#39; ]]></description>
+    <guid>http://localhost:1313/posts/build_a_personal_blog/</guid>
+    <description><![CDATA[is a test hello 参考资料 hugo官方文档 LoveIt Hugo如何添加评论系统？ hugo博客增加赞赏功能，基于LoveIt/LeaveIt/FixIt主题 world #!/bin/sh echo]]></description>
 </item>
 </channel>
 </rss>
