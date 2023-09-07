@@ -4,13 +4,23 @@
         <link>http://localhost:1313/posts/</link>
         <description>所有文章 | ggsmida的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>g_gsmida@163.com (junwu.gjw)</managingEditor>
-            <webMaster>g_gsmida@163.com (junwu.gjw)</webMaster><lastBuildDate>Mon, 04 Sep 2023 22:00:00 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>使用hugo &#43; LoveIt &#43; GitHub &#43; Giscus搭建个人博客</title>
+            <webMaster>g_gsmida@163.com (junwu.gjw)</webMaster><lastBuildDate>Wed, 06 Sep 2023 20:00:00 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>CUE：从入门到实践</title>
+    <link>http://localhost:1313/posts/cue/</link>
+    <pubDate>Wed, 06 Sep 2023 20:00:00 &#43;0800</pubDate>
+    <author>junwu.gjw</author>
+    <guid>http://localhost:1313/posts/cue/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/featured-image.jpg" referrerpolicy="no-referrer">
+            </div>CUE是Google多年编写配置语言的经验的结果，旨在提高开发人员的体验，同时避免一些棘手的陷阱。它是JSON的超集，具有额外的功能，使声明性、数据驱动的编程与常规命令式编程一样愉快和高效。]]></description>
+</item>
+<item>
+    <title>如何用Hugo &#43; GitHub Pages &#43; Giscus搭建个人博客</title>
     <link>http://localhost:1313/posts/build_a_personal_blog/</link>
     <pubDate>Mon, 04 Sep 2023 22:00:00 &#43;0800</pubDate>
     <author>junwu.gjw</author>
     <guid>http://localhost:1313/posts/build_a_personal_blog/</guid>
-    <description><![CDATA[is a test hello 参考资料 hugo官方文档 LoveIt Hugo如何添加评论系统？ hugo博客增加赞赏功能，基于LoveIt/LeaveIt/FixIt主题 world #!/bin/sh echo]]></description>
+    <description><![CDATA[简介 Hugo Hugo 是一个基于Go语言的静态网页生成器，它可以帮助我们快速创建出具有高度优化性能的静态网站。Hugo具有简单易用的特点，而且支持各种主题]]></description>
 </item>
 </channel>
 </rss>
