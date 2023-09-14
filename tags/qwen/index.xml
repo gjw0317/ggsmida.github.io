@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>AI - 标签 - ggsmida的博客</title>
+        <title>通义千问 - 标签 - ggsmida的博客</title>
         <link>http://localhost:1313/tags/qwen/</link>
-        <description>AI - 标签 - ggsmida的博客</description>
+        <description>通义千问 - 标签 - ggsmida的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>g_gsmida@163.com (junwu.gjw)</managingEditor>
             <webMaster>g_gsmida@163.com (junwu.gjw)</webMaster><atom:link href="http://localhost:1313/tags/qwen/" rel="self" type="application/rss+xml" /></channel>
 </rss>

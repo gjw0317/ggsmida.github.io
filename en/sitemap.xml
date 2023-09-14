@@ -20,14 +20,14 @@
                     hreflang="en"
                     href="http://localhost:1313/en/sponsor/"
                     /></url><url>
-            <loc>http://localhost:1313/en/tags/qwen/</loc><xhtml:link
+            <loc>http://localhost:1313/en/tags/ai/</loc><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="http://localhost:1313/tags/qwen/"
+                        href="http://localhost:1313/tags/ai/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:1313/en/tags/qwen/"
+                    href="http://localhost:1313/en/tags/ai/"
                     /></url><url>
             <loc>http://localhost:1313/en/categories/</loc><xhtml:link
                         rel="alternate"
@@ -74,14 +74,14 @@
                     hreflang="en"
                     href="http://localhost:1313/en/categories/life-essays/"
                     /></url><url>
-            <loc>http://localhost:1313/en/tags/ai/</loc><xhtml:link
+            <loc>http://localhost:1313/en/tags/qwen/</loc><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="http://localhost:1313/tags/ai/"
+                        href="http://localhost:1313/tags/qwen/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://localhost:1313/en/tags/ai/"
+                    href="http://localhost:1313/en/tags/qwen/"
                     /></url><url>
             <loc>http://localhost:1313/en/tags/</loc><xhtml:link
                         rel="alternate"

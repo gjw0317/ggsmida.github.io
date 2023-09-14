@@ -2,6 +2,15 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>http://localhost:1313/tags/ai/</loc><lastmod>2023-09-14T06:00:00&#43;08:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://localhost:1313/en/tags/ai/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="http://localhost:1313/tags/ai/"
+                    /></url><url>
             <loc>http://localhost:1313/categories/</loc><lastmod>2023-09-14T06:00:00&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -31,15 +40,6 @@
                     href="http://localhost:1313/tags/"
                     /></url><url>
             <loc>http://localhost:1313/tags/%E9%80%9A%E4%B9%89%E5%8D%83%E9%97%AE/</loc><lastmod>2023-09-14T06:00:00&#43;08:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/ai/</loc><lastmod>2023-09-14T06:00:00&#43;08:00</lastmod><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="http://localhost:1313/en/tags/ai/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="http://localhost:1313/tags/ai/"
-                    /></url><url>
             <loc>http://localhost:1313/posts/qwen/</loc><lastmod>2023-09-14T06:00:00&#43;08:00</lastmod></url><url>
             <loc>http://localhost:1313/categories/document/</loc><lastmod>2023-09-14T06:00:00&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
@@ -78,15 +78,6 @@
                     hreflang="zh-cn"
                     href="http://localhost:1313/sponsor/"
                     /></url><url>
-            <loc>http://localhost:1313/tags/qwen/</loc><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="http://localhost:1313/en/tags/qwen/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="http://localhost:1313/tags/qwen/"
-                    /></url><url>
             <loc>http://localhost:1313/categories/life-essays/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -95,4 +86,13 @@
                     rel="alternate"
                     hreflang="zh-cn"
                     href="http://localhost:1313/categories/life-essays/"
+                    /></url><url>
+            <loc>http://localhost:1313/tags/qwen/</loc><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://localhost:1313/en/tags/qwen/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="http://localhost:1313/tags/qwen/"
                     /></url></urlset>
