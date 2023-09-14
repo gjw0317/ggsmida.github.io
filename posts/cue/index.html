@@ -364,34 +364,76 @@
 <h2 id="实践技巧">实践技巧</h2>
 <h3 id="数学运算符">数学运算符</h3>
 <p>CUE 包含数字的标准的数学表达式，也可以在 <code>string</code> 或 <code>list</code> 中使用乘法。在 CUE 的 <a href="https://pkg.go.dev/cuelang.org/go@v0.6.0/pkg/math" target="_blank" rel="noopener noreffer ">math package</a> 中还有其他的运算操作。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/posts/cue/cue-math.jpg"
-        data-srcset="/posts/cue/cue-math.jpg, /posts/cue/cue-math.jpg 1.5x, /posts/cue/cue-math.jpg 2x"
-        data-sizes="auto"
-        alt="/posts/cue/cue-math.jpg"
-        title="cue math" width="3582" height="1042" /></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="fiximg" style="width: 100%;">
+    <div class="fiximg__container" style="margin-top:10px;margin-bottom:20px;%!(EXTRA float64=29.08989391401452)">
+        <img loading="lazy" src="http://localhost:1313/posts/cue/cue-math.jpg" alt="cue math" />
+    </div>
+</div>
+</p>
 <h3 id="比较运算符">比较运算符</h3>
 <p>CUE 拥有比较运算符和语义，值合并时会处理相等性检查。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/posts/cue/cue-compare.jpg"
-        data-srcset="/posts/cue/cue-compare.jpg, /posts/cue/cue-compare.jpg 1.5x, /posts/cue/cue-compare.jpg 2x"
-        data-sizes="auto"
-        alt="/posts/cue/cue-compare.jpg"
-        title="cue compare" width="3582" height="504" /></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="fiximg" style="width: 100%;">
+    <div class="fiximg__container" style="margin-top:10px;margin-bottom:20px;%!(EXTRA float64=14.07035175879397)">
+        <img loading="lazy" src="http://localhost:1313/posts/cue/cue-compare.jpg" alt="cue compare" />
+    </div>
+</div>
+</p>
 <h3 id="正则表达式">正则表达式</h3>
 <p>CUE 支持正则表达式，通过 <code>=~</code> 和 <code>!~</code> 进行限制。它们基于 <a href="https://pkg.go.dev/regexp" target="_blank" rel="noopener noreffer ">Go 的正则表达式</a>， CUE 也有一些额外的 <a href="https://pkg.go.dev/cuelang.org/go@v0.6.0/pkg/regexp" target="_blank" rel="noopener noreffer ">regexp helpers</a>。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/posts/cue/cue-reg.jpg"
-        data-srcset="/posts/cue/cue-reg.jpg, /posts/cue/cue-reg.jpg 1.5x, /posts/cue/cue-reg.jpg 2x"
-        data-sizes="auto"
-        alt="/posts/cue/cue-reg.jpg"
-        title="cue reg" width="3580" height="452" /></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="fiximg" style="width: 100%;">
+    <div class="fiximg__container" style="margin-top:10px;margin-bottom:20px;%!(EXTRA float64=12.625698324022347)">
+        <img loading="lazy" src="http://localhost:1313/posts/cue/cue-reg.jpg" alt="cue reg" />
+    </div>
+</div>
+</p>
 <h3 id="数字范围">数字范围</h3>
 <p>CUE里各个数字类型的范围如下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kt">int8</span>      <span class="o">&gt;=-</span><span class="mi">128</span> <span class="o">&amp;</span> <span class="o">&lt;=</span><span class="mi">127</span>
@@ -411,24 +453,52 @@
 </span></span><span class="line"><span class="cl"><span class="kt">rune</span>      <span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;</span> <span class="o">&lt;=</span><span class="mh">0x10FFFF</span>
 </span></span></code></pre></div><h3 id="引用">引用</h3>
 <p>CUE 使用 (<!-- raw HTML omitted -->) 就可以 string 或 byte 中插入值。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/posts/cue/cue-ref.jpg"
-        data-srcset="/posts/cue/cue-ref.jpg, /posts/cue/cue-ref.jpg 1.5x, /posts/cue/cue-ref.jpg 2x"
-        data-sizes="auto"
-        alt="/posts/cue/cue-ref.jpg"
-        title="cue reference" width="3582" height="512" /></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="fiximg" style="width: 100%;">
+    <div class="fiximg__container" style="margin-top:10px;margin-bottom:20px;%!(EXTRA float64=14.293690675600224)">
+        <img loading="lazy" src="http://localhost:1313/posts/cue/cue-ref.jpg" alt="cue reference" />
+    </div>
+</div>
+</p>
 <h3 id="field推导">Field推导</h3>
 <p>CUE 也可以通过推导生成字段，比如下图里的<code>\(app)</code>。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/posts/cue/cue-field-gen.jpg"
-        data-srcset="/posts/cue/cue-field-gen.jpg, /posts/cue/cue-field-gen.jpg 1.5x, /posts/cue/cue-field-gen.jpg 2x"
-        data-sizes="auto"
-        alt="/posts/cue/cue-field-gen.jpg"
-        title="cue field generate" width="3582" height="1204" /></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="fiximg" style="width: 100%;">
+    <div class="fiximg__container" style="margin-top:10px;margin-bottom:20px;%!(EXTRA float64=33.61250697934115)">
+        <img loading="lazy" src="http://localhost:1313/posts/cue/cue-field-gen.jpg" alt="cue field generate" />
+    </div>
+</div>
+</p>
 <h3 id="if">if</h3>
 <p>CUE的if与其他语言不同。它是一种理解机制，而不是分支机制。所以我们将它称为条件字段，或受保护的字段（技术上意味着保护），是另一种形式的字段推导。</p>
 <p>相对于通常意义的 if，有一些注意事项：</p>
@@ -436,14 +506,28 @@
 <li>没有 else 条件，必须有两个相反的判断条件</li>
 <li>对于多个检查，不会忽略任何判断条件，所有的条件都会被计算</li>
 </ul>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/posts/cue/cue-if.jpg"
-        data-srcset="/posts/cue/cue-if.jpg, /posts/cue/cue-if.jpg 1.5x, /posts/cue/cue-if.jpg 2x"
-        data-sizes="auto"
-        alt="/posts/cue/cue-if.jpg"
-        title="cue if example" width="3582" height="1956" /></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="fiximg" style="width: 100%;">
+    <div class="fiximg__container" style="margin-top:10px;margin-bottom:20px;%!(EXTRA float64=54.60636515912898)">
+        <img loading="lazy" src="http://localhost:1313/posts/cue/cue-if.jpg" alt="cue if example" />
+    </div>
+</div>
+</p>
 <p>所以如果你想要一种类似if else的逻辑，可以选择2种方式：</p>
 <ol>
 <li>通过将if和else两个条件都通过if写出来，分别判断和计算；</li>
@@ -467,46 +551,102 @@
 <p>需要注意的是，所有的条件声明都会被求值。</p>
 <h4 id="一个简单的例子">一个简单的例子</h4>
 <p>这个例子演示如何将 integer 转为描述其数字类型的 string。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/posts/cue/cue-switch-example.jpg"
-        data-srcset="/posts/cue/cue-switch-example.jpg, /posts/cue/cue-switch-example.jpg 1.5x, /posts/cue/cue-switch-example.jpg 2x"
-        data-sizes="auto"
-        alt="/posts/cue/cue-switch-example.jpg"
-        title="cue switch example" width="3582" height="540" /></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="fiximg" style="width: 100%;">
+    <div class="fiximg__container" style="margin-top:10px;margin-bottom:20px;%!(EXTRA float64=15.07537688442211)">
+        <img loading="lazy" src="http://localhost:1313/posts/cue/cue-switch-example.jpg" alt="cue switch example" />
+    </div>
+</div>
+</p>
 <h4 id="顺序相关性">顺序相关性</h4>
 <p>在下面这个例子中，我们通过分解这个模板来演示，当list的结果里有多个元素时，是。</p>
 <p>真正有前缀的字符串确实能拿到正确的结果，但是我们也可以看到，当 a 和 b 一样的时候， HasPrefix 仍然可以匹配，所以我们会得到不那么准确的结果。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/posts/cue/cue-switch-order.jpg"
-        data-srcset="/posts/cue/cue-switch-order.jpg, /posts/cue/cue-switch-order.jpg 1.5x, /posts/cue/cue-switch-order.jpg 2x"
-        data-sizes="auto"
-        alt="/posts/cue/cue-switch-order.jpg"
-        title="cue switch order" width="3582" height="834" /></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="fiximg" style="width: 100%;">
+    <div class="fiximg__container" style="margin-top:10px;margin-bottom:20px;%!(EXTRA float64=23.283082077051926)">
+        <img loading="lazy" src="http://localhost:1313/posts/cue/cue-switch-order.jpg" alt="cue switch order" />
+    </div>
+</div>
+</p>
 <h4 id="没有条件被命中">没有条件被命中</h4>
 <p>我们可以修改一下我们第一个例子来演示如果忘记 default 默认值的话会发生什么，或未覆盖所有条件的话会发生什么。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/posts/cue/cue-switch-none-example.jpg"
-        data-srcset="/posts/cue/cue-switch-none-example.jpg, /posts/cue/cue-switch-none-example.jpg 1.5x, /posts/cue/cue-switch-none-example.jpg 2x"
-        data-sizes="auto"
-        alt="/posts/cue/cue-switch-none-example.jpg"
-        title="cue switch none example" width="3580" height="448" /></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="fiximg" style="width: 100%;">
+    <div class="fiximg__container" style="margin-top:10px;margin-bottom:20px;%!(EXTRA float64=12.513966480446928)">
+        <img loading="lazy" src="http://localhost:1313/posts/cue/cue-switch-none-example.jpg" alt="cue switch none example" />
+    </div>
+</div>
+</p>
 <h4 id="所有条件都会检查">所有条件都会检查</h4>
 <p>你可能会觉得下面的例子能正常运行而不会报错。</p>
 <p>这是所有if条件都被检查引起的，也就是说，即使前面的某个if条件命中了，后面的if条件也会继续检查，跟前面if章节一样。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/posts/cue/cue-switch-all-condition.jpg"
-        data-srcset="/posts/cue/cue-switch-all-condition.jpg, /posts/cue/cue-switch-all-condition.jpg 1.5x, /posts/cue/cue-switch-all-condition.jpg 2x"
-        data-sizes="auto"
-        alt="/posts/cue/cue-switch-all-condition.jpg"
-        title="cue switch all condition" width="3582" height="412" /></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="fiximg" style="width: 100%;">
+    <div class="fiximg__container" style="margin-top:10px;margin-bottom:20px;%!(EXTRA float64=11.501954215522055)">
+        <img loading="lazy" src="http://localhost:1313/posts/cue/cue-switch-all-condition.jpg" alt="cue switch all condition" />
+    </div>
+</div>
+</p>
 <h3 id="list推导">List推导</h3>
 <p>CUE 可以通过 list 推导动态生成 list，可以遍历 list 或 struct 的字段。</p>
 <p>形式是 [ for key, val in <!-- raw HTML omitted --> [condition] { production } ]</p>
@@ -514,23 +654,51 @@
 <li>key 是 lists 的索引, 在 struct 中是字段的名称。</li>
 </ul>
 <p>下面是一个简单的例子：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/posts/cue/cue-list-simple.jpg"
-        data-srcset="/posts/cue/cue-list-simple.jpg, /posts/cue/cue-list-simple.jpg 1.5x, /posts/cue/cue-list-simple.jpg 2x"
-        data-sizes="auto"
-        alt="/posts/cue/cue-list-simple.jpg"
-        title="cue list simple example" width="3582" height="880" /></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="fiximg" style="width: 100%;">
+    <div class="fiximg__container" style="margin-top:10px;margin-bottom:20px;%!(EXTRA float64=24.567280848687883)">
+        <img loading="lazy" src="http://localhost:1313/posts/cue/cue-list-simple.jpg" alt="cue list simple example" />
+    </div>
+</div>
+</p>
 <p>下面是一个稍复杂的例子：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/posts/cue/cue-list-complex.jpg"
-        data-srcset="/posts/cue/cue-list-complex.jpg, /posts/cue/cue-list-complex.jpg 1.5x, /posts/cue/cue-list-complex.jpg 2x"
-        data-sizes="auto"
-        alt="/posts/cue/cue-list-complex.jpg"
-        title="cue list complex example" width="3580" height="1836" /></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="fiximg" style="width: 100%;">
+    <div class="fiximg__container" style="margin-top:10px;margin-bottom:20px;%!(EXTRA float64=51.28491620111731)">
+        <img loading="lazy" src="http://localhost:1313/posts/cue/cue-list-complex.jpg" alt="cue list complex example" />
+    </div>
+</div>
+</p>
 <hr>
 <h2 id="参考文档">参考文档</h2>
 <ul>
