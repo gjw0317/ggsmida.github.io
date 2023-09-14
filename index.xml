@@ -4,9 +4,19 @@
         <link>http://localhost:1313/</link>
         <description>ggsmida&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>g_gsmida@163.com (junwu.gjw)</managingEditor>
-            <webMaster>g_gsmida@163.com (junwu.gjw)</webMaster><lastBuildDate>Wed, 06 Sep 2023 20:00:00 &#43;0800</lastBuildDate>
+            <webMaster>g_gsmida@163.com (junwu.gjw)</webMaster><lastBuildDate>Thu, 14 Sep 2023 06:00:00 &#43;0800</lastBuildDate>
             <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>通义千问-初体验</title>
+    <link>http://localhost:1313/posts/qwen/</link>
+    <pubDate>Thu, 14 Sep 2023 06:00:00 &#43;0800</pubDate>
+    <author>junwu.gjw</author>
+    <guid>http://localhost:1313/posts/qwen/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/featured-image.jpg" referrerpolicy="no-referrer">
+            </div>阿里通义千问模型最近发布了，特地体验了下，通义千问是达摩院自主研发的超大规模语言模型，能够回答问题、创作文字，还能表达观点、撰写代码。]]></description>
+</item>
+<item>
     <title>CUE：从入门到实践</title>
     <link>http://localhost:1313/posts/cue/</link>
     <pubDate>Wed, 06 Sep 2023 20:00:00 &#43;0800</pubDate>
