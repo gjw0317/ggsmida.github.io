@@ -12,7 +12,9 @@
     <pubDate>Tue, 19 Sep 2023 06:00:00 &#43;0800</pubDate>
     <author>junwu.gjw</author>
     <guid>http://localhost:1313/posts/cdn/</guid>
-    <description><![CDATA[用Github Pages部署发布个人博客虽然免费，但是它在国内的访问速度实在令人不敢恭维，于是想着用CDN加速下，结果一顿操作完访问不了，排查发现域名循环重定向了。那么它是怎么产生的？又该怎么解决呢？]]></description>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/featured-image.jpg" referrerpolicy="no-referrer">
+            </div>用Github Pages部署发布个人博客虽然免费，但是它在国内的访问速度实在令人不敢恭维，于是想着用CDN加速下，结果一顿操作完访问不了，排查发现域名循环重定向了。那么它是怎么产生的？又该怎么解决呢？]]></description>
 </item>
 <item>
     <title>通义千问-初体验</title>
