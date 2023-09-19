@@ -38,6 +38,15 @@
                     hreflang="en"
                     href="http://localhost:1313/en/categories/"
                     /></url><url>
+            <loc>http://localhost:1313/en/tags/cdn/</loc><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="http://localhost:1313/tags/cdn/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/en/tags/cdn/"
+                    /></url><url>
             <loc>http://localhost:1313/en/tags/cue/</loc><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"

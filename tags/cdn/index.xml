@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>CDN - 标签 - ggsmida的博客</title>
+        <link>http://localhost:1313/tags/cdn/</link>
+        <description>CDN - 标签 - ggsmida的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>g_gsmida@163.com (junwu.gjw)</managingEditor>
+            <webMaster>g_gsmida@163.com (junwu.gjw)</webMaster><lastBuildDate>Tue, 19 Sep 2023 06:00:00 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/cdn/" rel="self" type="application/rss+xml" /><item>
+    <title>使用CDN加速Github Pages踩坑之循环重定向</title>
+    <link>http://localhost:1313/posts/cdn/</link>
+    <pubDate>Tue, 19 Sep 2023 06:00:00 &#43;0800</pubDate>
+    <author>junwu.gjw</author>
+    <guid>http://localhost:1313/posts/cdn/</guid>
+    <description><![CDATA[用Github Pages部署发布个人博客虽然免费，但是它在国内的访问速度实在令人不敢恭维，于是想着用CDN加速下，结果一顿操作完访问不了，排查发现域名循环重定向了。那么它是怎么产生的？又该怎么解决呢？]]></description>
+</item>
+</channel>
+</rss>
