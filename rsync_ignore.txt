@@ -1,0 +1,4 @@
+publish.sh
+rsync_ignore.txt
+.git
+CNAME
