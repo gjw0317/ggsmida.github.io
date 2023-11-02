@@ -16,10 +16,12 @@ script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 ignore_list_file="$script_dir/rsync_ignore.txt"
 
 # 更新忽略列表文件
+touch "$ignore_list_file"
 echo "$(basename $0)" > "$ignore_list_file"
 echo "rsync_ignore.txt" >> "$ignore_list_file"
 echo ".git" >> "$ignore_list_file"
 echo "CNAME" >> "$ignore_list_file"
+ls -l "$script_dir"
 
 # 同步public目录到GitHub Pages的git repo
 rsync -a --exclude-from="$ignore_list_file" "$hugo_public_dir/" "$script_dir/"
