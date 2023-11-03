@@ -4,10 +4,10 @@
         <link>http://localhost:1313/posts/</link>
         <description>所有文章 | ggsmida的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>g_gsmida@163.com (junwu.gjw)</managingEditor>
-            <webMaster>g_gsmida@163.com (junwu.gjw)</webMaster><lastBuildDate>Tue, 19 Sep 2023 06:00:00 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>g_gsmida@163.com (junwu.gjw)</webMaster><lastBuildDate>Mon, 18 Sep 2023 22:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
     <title>使用CDN加速Github Pages踩坑之循环重定向</title>
     <link>http://localhost:1313/posts/cdn/</link>
-    <pubDate>Tue, 19 Sep 2023 06:00:00 &#43;0800</pubDate>
+    <pubDate>Mon, 18 Sep 2023 22:00:00 &#43;0000</pubDate>
     <author>junwu.gjw</author>
     <guid>http://localhost:1313/posts/cdn/</guid>
     <description><![CDATA[<div class="featured-image">
@@ -17,7 +17,7 @@
 <item>
     <title>通义千问-初体验</title>
     <link>http://localhost:1313/posts/qwen/</link>
-    <pubDate>Thu, 14 Sep 2023 06:00:00 &#43;0800</pubDate>
+    <pubDate>Wed, 13 Sep 2023 22:00:00 &#43;0000</pubDate>
     <author>junwu.gjw</author>
     <guid>http://localhost:1313/posts/qwen/</guid>
     <description><![CDATA[<div class="featured-image">
@@ -27,7 +27,7 @@
 <item>
     <title>CUE：从入门到实践</title>
     <link>http://localhost:1313/posts/cue/</link>
-    <pubDate>Wed, 06 Sep 2023 20:00:00 &#43;0800</pubDate>
+    <pubDate>Wed, 06 Sep 2023 12:00:00 &#43;0000</pubDate>
     <author>junwu.gjw</author>
     <guid>http://localhost:1313/posts/cue/</guid>
     <description><![CDATA[<div class="featured-image">
