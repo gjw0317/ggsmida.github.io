@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>giscus - 标签 - ggsmida的博客</title>
+        <link>http://localhost:1313/tags/giscus/</link>
+        <description>giscus - 标签 - ggsmida的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>g_gsmida@163.com (junwu.gjw)</managingEditor>
+            <webMaster>g_gsmida@163.com (junwu.gjw)</webMaster><lastBuildDate>Mon, 04 Sep 2023 14:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/giscus/" rel="self" type="application/rss+xml" /><item>
+    <title>如何用Hugo &#43; GitHub Pages &#43; Giscus搭建个人博客</title>
+    <link>http://localhost:1313/posts/blog/</link>
+    <pubDate>Mon, 04 Sep 2023 14:00:00 &#43;0000</pubDate>
+    <author>junwu.gjw</author>
+    <guid>http://localhost:1313/posts/blog/</guid>
+    <description><![CDATA[简介 Hugo Hugo 是一个基于Go语言的静态网页生成器，它可以帮助我们快速创建出具有高度优化性能的静态网站。Hugo具有简单易用的特点，而且支持各种主题]]></description>
+</item>
+</channel>
+</rss>

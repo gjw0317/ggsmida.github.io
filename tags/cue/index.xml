@@ -10,9 +10,7 @@
     <pubDate>Wed, 06 Sep 2023 12:00:00 &#43;0000</pubDate>
     <author>junwu.gjw</author>
     <guid>http://localhost:1313/posts/cue/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/featured-image.jpg" referrerpolicy="no-referrer">
-            </div>CUE是Google多年编写配置语言的经验的结果，旨在提高开发人员的体验，同时避免一些棘手的陷阱。它是JSON的超集，具有额外的功能，使声明性、数据驱动的编程与常规命令式编程一样愉快和高效。]]></description>
+    <description><![CDATA[CUE是Google多年编写配置语言的经验的结果，旨在提高开发人员的体验，同时避免一些棘手的陷阱。它是JSON的超集，具有额外的功能，使声明性、数据驱动的编程与常规命令式编程一样愉快和高效。]]></description>
 </item>
 </channel>
 </rss>

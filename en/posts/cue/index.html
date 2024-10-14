@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>CUE：从入门到实践 - ggsmida&#39;s blog</title><meta name="Description" content="介绍CUE的基本语法及实践过程中的使用技巧。"><meta property="og:title" content="CUE：从入门到实践" />
+<meta property="og:description" content="介绍CUE的基本语法及实践过程中的使用技巧。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/en/posts/cue/" /><meta property="og:image" content="http://localhost:1313/images/profile.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-09-06T12:00:00+00:00" />
+<meta property="article:modified_time" content="2023-09-06T12:00:00+00:00" /><meta property="og:site_name" content="ggsmida&#39;s blog" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/profile.jpg"/>
+
+<meta name="twitter:title" content="CUE：从入门到实践"/>
+<meta name="twitter:description" content="介绍CUE的基本语法及实践过程中的使用技巧。"/>
+<meta name="application-name" content="我的网站">
+<meta name="apple-mobile-web-app-title" content="我的网站"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/en/posts/cue/" /><link rel="prev" href="http://localhost:1313/en/posts/blog/" /><link rel="next" href="http://localhost:1313/en/posts/qwen/" /><link rel="stylesheet" href="/css/style.min.9ca2d55458092985b485ef6ca46fac48.css" integrity="md5-nKLVVFgJKYW0he9spG+sSA=="><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><meta name="google-site-verification" content="uIbwLKXuYcSitCPCNRoodARJN_lHUtTOn3sozNSIY-8" /><meta name="baidu-site-verification" content="codeva-kCQIEMsvsM" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CUE：从入门到实践",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/en\/posts\/cue\/"
+        },"genre": "posts","keywords": "cue","wordcount":  5363 ,
+        "url": "http:\/\/localhost:1313\/en\/posts\/cue\/","datePublished": "2023-09-06T12:00:00+00:00","dateModified": "2023-09-06T12:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "junwu.gjw"
+            },"description": "介绍CUE的基本语法及实践过程中的使用技巧。"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/en/" title="ggsmida&#39;s blog">ggsmida&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/en/posts/"> Posts </a><a class="menu-item" href="/en/tags/"> Tags </a><a class="menu-item" href="/en/categories/"> Categories </a><a class="menu-item" href="/en/favorites/"> Favorites </a><a class="menu-item" href="/en/about/"> About </a><a class="menu-item" href="/en/sponsor/"> Sponsor </a><a class="menu-item" href="https://github.com/gjw0317/gjw0317.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/posts/cue/">简体中文</option><option value="/en/posts/cue/" selected>English</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/en/" title="ggsmida&#39;s blog">ggsmida&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/en/posts/" title="">Posts</a><a class="menu-item" href="/en/tags/" title="">Tags</a><a class="menu-item" href="/en/categories/" title="">Categories</a><a class="menu-item" href="/en/favorites/" title="">Favorites</a><a class="menu-item" href="/en/about/" title="">About</a><a class="menu-item" href="/en/sponsor/" title="">Sponsor</a><a class="menu-item" href="https://github.com/gjw0317/gjw0317.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/posts/cue/">简体中文</option><option value="/en/posts/cue/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+    <h2 class="toc-title">Contents</h2>
+    <div class="toc-content always-active" id="toc-content-auto"></div>
+</div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">CUE：从入门到实践</h1><div class="post-meta">
+        <div class="post-meta-line"><span class="post-author"><a href="http://www.ggsmida.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>junwu.gjw</a></span>&nbsp;<span class="post-category">included in <a href="/en/categories/document/"><i class="far fa-folder fa-fw"
+                    aria-hidden="true"></i>Document</a></span></div>
+        <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-09-06">2023-09-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;5363 words&nbsp;
+            <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;11 minutes&nbsp;
+    
+
+    
+        
+
+            
+            
+            <span id="busuanzi_container_value_page_pv"><i class="far fa-eye fa-fw"></i>
+                
+                <span id="busuanzi_value_page_pv"></span>&nbsp;views</span>
+        
+    
+</div>
+    </div><div class="details toc" id="toc-static" data-kept="">
+        <div class="details-summary toc-title">
+            <span>Contents</span>
+            <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#什么是cue">什么是CUE？</a></li>
+    <li><a href="#对配置语言的需求">对配置语言的需求</a></li>
+    <li><a href="#了解cue">了解Cue</a>
+      <ul>
+        <li><a href="#cue是json的超集">Cue是JSON的超集</a></li>
+        <li><a href="#types是有类型的值">Types是有类型的值</a></li>
+        <li><a href="#数据类型">数据类型</a></li>
+        <li><a href="#具体值">具体值</a></li>
+        <li><a href="#缺省可选值">缺省、可选值</a></li>
+        <li><a href="#definitions">Definitions</a></li>
+        <li><a href="#统一">统一</a></li>
+        <li><a href="#默认值和继承的性质">默认值和继承的性质</a></li>
+        <li><a href="#嵌套">嵌套</a></li>
+        <li><a href="#包">包</a></li>
+      </ul>
+    </li>
+    <li><a href="#实践技巧">实践技巧</a>
+      <ul>
+        <li><a href="#数学运算符">数学运算符</a></li>
+        <li><a href="#比较运算符">比较运算符</a></li>
+        <li><a href="#正则表达式">正则表达式</a></li>
+        <li><a href="#数字范围">数字范围</a></li>
+        <li><a href="#引用">引用</a></li>
+        <li><a href="#field推导">Field推导</a></li>
+        <li><a href="#if">if</a></li>
+        <li><a href="#switch">switch</a></li>
+        <li><a href="#list推导">List推导</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考文档">参考文档</a></li>
+  </ul>
+</nav></div>
+    </div><div class="content" id="content"><div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">本文许多内容翻译自网上官方文档或相关资料，本文仅用于学习、调研使用，不用于商业用途。</div>
+        </div>
+    </div>
+<h2 id="什么是cue">什么是CUE？</h2>
+<p>CUE是由Marcel van Lohuizen创建的强大配置语言，他共同创建了Borg Configuration Language（BCL）&mdash;&mdash;Google用于部署所有应用程序的语言。CUE是Google多年编写配置语言的经验的结果，旨在提高开发人员的体验，同时避免一些棘手的陷阱。它是JSON的超集，具有额外的功能，使声明性、数据驱动的编程与常规命令式编程一样愉快和高效。</p>
+<h2 id="对配置语言的需求">对配置语言的需求</h2>
+<p>几十年来，开发人员、工程师和系统管理员都使用某种INI、ENV、YAML、XML和JSON（以及Apache、Nginx等自定义格式）来描述配置、资源、操作、变量、参数、状态等。虽然这些示例适用于存储数据，但它们仅仅是数据格式，而不是语言，因此它们都缺乏直接执行逻辑和操作数据的能力。</p>
+<p>if语句、for循环、列表推导和字符串插值等简单而强大的功能在这些格式中是无法实现的，必须使用单独的执行过程。结果是变量或参数必须被注入，任何逻辑都必须由模板语言（如Jinja）或由DSL（领域特定语言）指示的单独引擎执行。通常，模板语言和DSL一起使用，虽然这在技术上是可行的，但结果是代码库，甚至单个文件变得过于冗长，模板语言与各种DSL（有时是多个DSL）交替出现（有时一个DSL的输出作为另一个DSL的输入！），没有强制执行模式（并非没有更多的努力），从而使代码难以推理，难以维护，脆弱，而且最糟糕的是容易产生副作用。</p>
+<p>CUE等配置语言使我们能够既指定数据，又根据实现所需输出的需要，使用任何逻辑对数据进行操作。此外，也许最重要的是，CUE不仅允许我们将数据指定为具体值，还允许我们指定这些具体值必须具有的类型以及任何约束（例如最小值和最大值）。它使我们能够定义模式，但与使用JSON Schema等定义模式不同，CUE可以定义和强制执行模式，而JSON Schema仅仅是一个需要其他过程来强制执行的定义。</p>
+<p>要深入了解作为代码的配置的问题，请查看&quot;配置复杂性的诅咒&quot;和&quot;Cue如何获胜&quot;。</p>
+<h2 id="了解cue">了解Cue</h2>
+<p>我们不会尝试重写<a href="https://cuelang.org/docs/" target="_blank" rel="noopener noreffer ">CUE文档</a>或复制一些优秀的<a href="https://cuetorials.com/zh/" target="_blank" rel="noopener noreffer ">CUE教程</a>，而是为您提供足够的CUE理解，以便满足日常开发需求。</p>
+<p>至少就我们这里的目的而言，您需要了解几个关键概念，每个概念将在下面详细解释：</p>
+<ol>
+<li>Cue是JSON的超集</li>
+<li>Types是有类型的值</li>
+<li>具体值</li>
+<li>约束、定义和模式</li>
+<li>统一</li>
+<li>默认值和继承的性质</li>
+<li>嵌套</li>
+<li>包</li>
+</ol>
+<p>虽然本地安装CUE会非常有用，但如果您愿意，也可以在<a href="https://cuelang.org/play/#cue@export@cue" target="_blank" rel="noopener noreffer ">CUE playground</a>中尝试这些示例。</p>
+<h3 id="cue是json的超集">Cue是JSON的超集</h3>
+<p>您可以在JSON中表达的内容，您可以在CUE中表达，但并非CUE中的所有内容都可以在JSON中表达。CUE还支持可以完全消除某些字符的&quot;lite&quot;版本的JSON。请看以下代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Bob&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;Name&#34;</span><span class="p">:</span> <span class="s">&#34;Bob Smith&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;Age&#34;</span><span class="p">:</span> <span class="mi">42</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Bob</span><span class="p">:</span> <span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Bob Smith&#34;</span>
+</span></span></code></pre></div><p>在这个例子中，我们看到在CUE中我们声明了顶层键Bob两次：一次是使用带有括号、引号和逗号的更详细的JSON风格，另一次是使用没有额外字符的&quot;lite&quot;风格。请注意，CUE支持简写：当您针对对象中的单个键时，您不需要大括号，可以将其写为冒号分隔的路径。在<a href="https://cuelang.org/play/#cue@export@cue" target="_blank" rel="noopener noreffer ">CUE playground</a>中尝试一下，并注意输出（您可以选择不同的格式）。顶层Bob键被声明了两次，但只输出一次，因为CUE会自动统一这两个声明。可以多次声明相同的字段，只要我们提供相同的值。请参见下面的默认值和继承的性质。</p>
+<h3 id="types是有类型的值">Types是有类型的值</h3>
+<p>在前面的示例中，我们将<code>Name</code>值定义为字符串字面量&quot;Bob Smith&quot;，将<code>Age</code>值定义为整数字面量42，它们都是具体值。通常，CUE的输出将被用作其他系统（无论是API、CLI工具、CICD流程等）的输入，并且这些系统可能期望数据符合模式，其中每个字段具有类型，并可能受到min、max、枚举、正则表达式等函数的约束。考虑到这一点，我们需要强制执行类型和约束，以防止将<code>Name</code>值设置为整数或将<code>Age</code>值设置为字符串。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">Bob</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Name</span><span class="p">:</span> <span class="kt">string</span> <span class="c1">// type as the value
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">Age</span><span class="p">:</span> <span class="kt">int</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Bob</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Bob Smith&#34;</span> <span class="c1">// literals match the type
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">Age</span><span class="p">:</span> <span class="mi">42</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>这里我们将<code>Name</code>字段定义为<code>string</code>，将<code>Age</code>字段定义为<code>int</code>。请注意，<code>string</code>和<code>int</code>不在引号内。这就是我们所说的&quot;types are values&quot;。对于任何编写过Go或其他强类型语言的人来说，这将非常熟悉。有了这些类型的定义，CUE将强制执行它们，因此任何提供Name的整数或Age的字符串的尝试都将导致错误。值得注意的是，这个示例的输出是隐式统一的结果；我们稍后将讨论显式统一。</p>
+<h3 id="数据类型">数据类型</h3>
+<p>数据类型包含：</p>
+<ul>
+<li>null：空值</li>
+<li>string：字符串，如果你的字符串里有特殊字符，或者换行，可以使用任意数量的#包住你的字符串，这个任意数量的#会作为字符串的定界符。</li>
+<li>bytes：字符</li>
+<li>int：整数</li>
+<li>number：数字</li>
+<li>bool：布尔值</li>
+<li>_：任意类型，官网称这个特殊字符为&quot;Top&quot;</li>
+<li>_|_：失败，或者不存在的意思，官网称这个特殊字符为&quot;Bottom&quot;</li>
+</ul>
+<p>单独介绍下Lists，以int为例：</p>
+<ul>
+<li>[int]：只有一个int元素的List</li>
+<li>4 * [int]：有4个int元素的List</li>
+<li>[&hellip;int]：长度不固定的由int元素组成的List</li>
+<li>[&hellip;]：长度不固定的由任意类型的元素组成的List</li>
+</ul>
+<h3 id="具体值">具体值</h3>
+<p>CUE最终用于导出数据，并且当该数据已经针对明确定义的模式进行验证时，CUE最有用的。为了使CUE导出任何内容，我们必须为所有未标记为可选的已定义字段提供具体值。如果我们只是将必需字段定义为类型，而不提供具体值，CUE将返回错误。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">Bob</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Name</span><span class="p">:</span> <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Age</span><span class="p">:</span> <span class="kt">int</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Bob</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Bob Smith&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">//Age: is considered &#34;incomplete&#34; because no concrete value is defined
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><p>在<a href="https://cuelang.org/play/#cue@export@cue" target="_blank" rel="noopener noreffer ">CUE playground</a>中尝试运行，发现CUE会报错值不完整。</p>
+<h3 id="缺省可选值">缺省、可选值</h3>
+<p>定义一个数据类型时，往往需要定义一个字段是否必须、设置缺省值、设置字段的取值范围等。
+如果一个不是必须的，可以通过？来标识，比如下面的Age：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">Bob</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Name</span><span class="p">:</span> <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Age</span><span class="err">?</span><span class="p">:</span> <span class="kt">int</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Bob</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Bob Smith&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>
+<figure><a class="lightgallery" href="/en/posts/cue/cue-defualt-1.png" title="cue-defualt-1.png" data-thumbnail="/en/posts/cue/cue-defualt-1.png" data-sub-html="<h2> </h2><p>cue-defualt-1.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cue/cue-defualt-1.png"
+            data-srcset="/en/posts/cue/cue-defualt-1.png, /en/posts/cue/cue-defualt-1.png 1.5x, /en/posts/cue/cue-defualt-1.png 2x"
+            data-sizes="auto"
+            alt="/en/posts/cue/cue-defualt-1.png" width="3582" height="478" />
+    </a><figcaption class="image-caption">cue-defualt-1.png</figcaption>
+</figure>
+
+
+
+</p>
+<p>如果要设置缺省值，可以通过 * 来标识，比如下面的Age：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl">    <span class="nx">Bob</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">Name</span><span class="p">:</span> <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">Age</span><span class="p">:</span> <span class="kt">int</span> <span class="p">|</span> <span class="o">*</span><span class="mi">10</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">Bob</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Bob Smith&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></div><p>
+<figure><a class="lightgallery" href="/en/posts/cue/cue-defualt-2.png" title="cue-defualt-2.png" data-thumbnail="/en/posts/cue/cue-defualt-2.png" data-sub-html="<h2> </h2><p>cue-defualt-2.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cue/cue-defualt-2.png"
+            data-srcset="/en/posts/cue/cue-defualt-2.png, /en/posts/cue/cue-defualt-2.png 1.5x, /en/posts/cue/cue-defualt-2.png 2x"
+            data-sizes="auto"
+            alt="/en/posts/cue/cue-defualt-2.png" width="3582" height="590" />
+    </a><figcaption class="image-caption">cue-defualt-2.png</figcaption>
+</figure>
+
+
+
+</p>
+<p>如果要设置可选值，可以使用 | 来设置，比如下面的Gender：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">Bob</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Name</span><span class="p">:</span> <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Gender</span><span class="p">:</span> <span class="s">&#34;male&#34;</span> <span class="p">|</span> <span class="s">&#34;female&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>如果Gender赋值成了别的值，则会报错：
+
+<figure><a class="lightgallery" href="/en/posts/cue/cue-defualt-3.png" title="cue-defualt-3.png" data-thumbnail="/en/posts/cue/cue-defualt-3.png" data-sub-html="<h2> </h2><p>cue-defualt-3.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cue/cue-defualt-3.png"
+            data-srcset="/en/posts/cue/cue-defualt-3.png, /en/posts/cue/cue-defualt-3.png 1.5x, /en/posts/cue/cue-defualt-3.png 2x"
+            data-sizes="auto"
+            alt="/en/posts/cue/cue-defualt-3.png" width="3580" height="732" />
+    </a><figcaption class="image-caption">cue-defualt-3.png</figcaption>
+</figure>
+
+
+
+</p>
+<p>如果想要做更复杂的值的可选范围的校验，比如正则匹配，请参考下一章节里的内容。</p>
+<h3 id="definitions">Definitions</h3>
+<p>在现实世界中，我们可能需要定义不止一个人，并确保每个人都满足模式。这就是<code>definitions</code>派上用场的地方。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="err">#</span><span class="nx">Person</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Name</span><span class="p">:</span> <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Email</span><span class="p">:</span> <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Age</span><span class="err">?</span><span class="p">:</span> <span class="kt">int</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Bob</span><span class="p">:</span> <span class="err">#</span><span class="nx">Person</span> <span class="o">&amp;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Bob Smith&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Email</span><span class="p">:</span> <span class="s">&#34;bob@smith.com&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Age is now optional
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><p>在这个例子中，我们声明了<code>#Person</code>是一个definitions，由#符号表示。通过这样做，我们将Person对象限制为特定字段的集合，每个字段都是特定类型。默认情况下，definitions是封闭的，这意味着#Person不能包含definitions中未指定的任何字段。您还会注意到<code>Age？</code>现在包含一个<code>？</code>，表示此字段是可选的。</p>
+<p>Definitions本身不会导出到最终输出。为了得到具体输出，我们声明Bob是一个#Person，并使用单个<code>&amp;</code>（与逻辑AND通过<code>&amp;&amp;</code>！不同！）我们将<code>#Person</code>与具有满足该definitions的约束的具体值的对象统一起来。</p>
+<p>您可以将definitions视为相关约束的逻辑集，将模式视为更大的约束集体，而不需要都是definitions。</p>
+<p>尝试在<a href="https://cuelang.org/play/#cue@export@cue" target="_blank" rel="noopener noreffer ">CUE playground</a>中进行尝试，并实验通过使用<code>？</code>来使字段可选，结合定义和不定义值来查看。</p>
+<h3 id="统一">统一</h3>
+<p>统一是CUE的核心所在。如果值是燃料，那么统一就是引擎。正是通过统一，我们既可以定义约束，又可以计算具体值。让我们通过一些例子来看看这个想法：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;strings&#34;</span> <span class="c1">// import builtin package
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">)</span>           <span class="c1">// more on packages later
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="err">#</span><span class="nx">Person</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// further constrain to a min and max length
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">Name</span><span class="p">:</span> <span class="kt">string</span> <span class="o">&amp;</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">MinRunes</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">MaxRunes</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// we don&#39;t need string because the regex handles that
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">Email</span><span class="p">:</span> <span class="p">=</span><span class="err">~</span><span class="s">&#34;^[a-zA-Z0-9.!#$%&amp;&#39;*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// further constrain to realistic ages
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">Age</span><span class="err">?</span><span class="p">:</span> <span class="kt">int</span> <span class="o">&amp;</span> <span class="p">&gt;</span><span class="mi">0</span> <span class="o">&amp;</span> <span class="p">&lt;</span><span class="mi">140</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Bob</span><span class="p">:</span> <span class="err">#</span><span class="nx">Person</span> <span class="o">&amp;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Bob Smith&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Email</span><span class="p">:</span> <span class="s">&#34;bob@smith.com&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Age</span><span class="p">:</span> <span class="mi">42</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// output in YAML:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">Bob</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Name</span><span class="p">:</span> <span class="nx">Bob</span> <span class="nx">Smith</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Email</span><span class="p">:</span> <span class="nx">bob</span><span class="err">@</span><span class="nx">smith</span><span class="p">.</span><span class="nx">com</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Age</span><span class="p">:</span> <span class="mi">42</span>
+</span></span></code></pre></div><p>这里的输出是通过将<code>#Person</code>定义与包含具体值的对象统一而得到的，其中每个具体值都是通过将具体值与定义中字段声明类型和约束进行统一而得到的。请尝试在<a href="https://cuelang.org/play/#cue@export@cue" target="_blank" rel="noopener noreffer ">CUE playground</a>中进行操作</p>
+<h3 id="默认值和继承的性质">默认值和继承的性质</h3>
+<p>在统一对象或结构时，会发生一种递归统一字段的合并形式，但与例如在JavaScript中合并JSON对象不同，不同的值不会覆盖，而是导致错误。这部分是由于CUE的可交换性（如果顺序不重要，您如何选择一个值而不是另一个值？），但主要是由于覆盖太容易产生难以调试的副作用。让我们看另一个例子：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;strings&#34;</span> <span class="c1">// a builtin package
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">#</span><span class="nx">Person</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// further constrain to a min and max length
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">Name</span><span class="p">:</span> <span class="kt">string</span> <span class="o">&amp;</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">MinRunes</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">MaxRunes</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// we don&#39;t need string because the regex handles that
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">Email</span><span class="p">:</span> <span class="p">=</span><span class="err">~</span><span class="s">&#34;^[a-zA-Z0-9.!#$%&amp;&#39;*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// further constrain to realistic ages
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">Age</span><span class="err">?</span><span class="p">:</span> <span class="kt">int</span> <span class="o">&amp;</span> <span class="p">&gt;</span><span class="mi">0</span> <span class="o">&amp;</span> <span class="p">&lt;</span><span class="mi">140</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Job is optional and a string
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">Job</span><span class="err">?</span><span class="p">:</span> <span class="kt">string</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">#</span><span class="nx">Engineer</span><span class="p">:</span> <span class="err">#</span><span class="nx">Person</span> <span class="o">&amp;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Job</span><span class="p">:</span> <span class="s">&#34;Engineer&#34;</span> <span class="c1">// Job is further constrained to required and exactly this value
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Bob</span><span class="p">:</span> <span class="err">#</span><span class="nx">Engineer</span> <span class="o">&amp;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Bob Smith&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Email</span><span class="p">:</span> <span class="s">&#34;bob@smith.com&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Age</span><span class="p">:</span> <span class="mi">42</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Job: &#34;Carpenter&#34; // would result in an error
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// output in YAML:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">Bob</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Name</span><span class="p">:</span> <span class="nx">Bob</span> <span class="nx">Smith</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Email</span><span class="p">:</span> <span class="nx">bob</span><span class="err">@</span><span class="nx">smith</span><span class="p">.</span><span class="nx">com</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Age</span><span class="p">:</span> <span class="mi">42</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Job</span><span class="p">:</span> <span class="nx">Engineer</span>
+</span></span></code></pre></div><p>虽然Bob对象可以从<code>#Engineer</code>继承Job值，而#Engineer又从<code>#Person</code>继承约束，但无法覆盖Job值。在<a href="https://cuelang.org/play/#cue@export@cue" target="_blank" rel="noopener noreffer ">CUE playground</a>中尝试它，并取消注释Bob中的Job字段，以查看CUE返回错误。</p>
+<p>如果我们希望Bob对象拥有不同的工作，它要么需要与不同的类型统一，要么<code>#Engineer:Job:</code>字段需要一个较宽松的约束和默认值。尝试将Job字段更改为以下内容：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="err">#</span><span class="nx">Engineer</span><span class="p">:</span> <span class="err">#</span><span class="nx">Person</span> <span class="o">&amp;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Job</span><span class="p">:</span> <span class="kt">string</span> <span class="p">|</span> <span class="o">*</span><span class="s">&#34;Engineer&#34;</span> <span class="c1">// can still be any string, but *defaults* to &#34;Engineer&#34; when no concrete value is explicitly defined
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><p>Bob继承了默认值，但现在允许指定不同的工作。</p>
+<h3 id="嵌套">嵌套</h3>
+<p>CUE允许将一个定义嵌入到另一个定义中，类似于Golang嵌入或面向对象的组合。这避免了在定义中添加额外的深度级别。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;strings&#34;</span> <span class="c1">// a builtin package
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">#</span><span class="nx">Person</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// further constrain to a min and max length
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">Name</span><span class="p">:</span> <span class="kt">string</span> <span class="o">&amp;</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">MinRunes</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">MaxRunes</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// we don&#39;t need string because the regex handles that
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">Email</span><span class="p">:</span> <span class="p">=</span><span class="err">~</span><span class="s">&#34;^[a-zA-Z0-9.!#$%&amp;&#39;*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// further constrain to realistic ages
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">Age</span><span class="err">?</span><span class="p">:</span> <span class="kt">int</span> <span class="o">&amp;</span> <span class="p">&gt;</span><span class="mi">0</span> <span class="o">&amp;</span> <span class="p">&lt;</span><span class="mi">140</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Job is optional and a string
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">Job</span><span class="err">?</span><span class="p">:</span> <span class="kt">string</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Engineer definition embed #Person and add Domain field
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="err">#</span><span class="nx">Engineer</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Domain</span><span class="p">:</span> <span class="s">&#34;Backend&#34;</span> <span class="p">|</span> <span class="s">&#34;Frontend&#34;</span> <span class="p">|</span> <span class="s">&#34;DevOps&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Embed and add additional constraint on Job
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="err">#</span><span class="nx">Person</span> <span class="o">&amp;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Job</span><span class="p">:</span> <span class="s">&#34;Engineer&#34;</span> <span class="c1">// Job is further constrained to required and exactly this value
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Bob</span><span class="p">:</span> <span class="err">#</span><span class="nx">Engineer</span> <span class="o">&amp;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Bob Smith&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Email</span><span class="p">:</span> <span class="s">&#34;bob@smith.com&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Age</span><span class="p">:</span> <span class="mi">42</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Domain</span><span class="p">:</span> <span class="s">&#34;Backend&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// output in YAML:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">Bob</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Name</span><span class="p">:</span> <span class="nx">Bob</span> <span class="nx">Smith</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Email</span><span class="p">:</span> <span class="nx">bob</span><span class="err">@</span><span class="nx">smith</span><span class="p">.</span><span class="nx">com</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Age</span><span class="p">:</span> <span class="mi">42</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Job</span><span class="p">:</span> <span class="nx">Engineer</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Domain</span><span class="p">:</span> <span class="nx">Backend</span>
+</span></span></code></pre></div><p>嵌入<code>#Engineer</code>的任何定义将共享其属性，并且可以从该定义直接访问它们。请在<a href="https://cuelang.org/play/#cue@export@cue" target="_blank" rel="noopener noreffer ">CUE playground</a>中尝试。</p>
+<h3 id="包">包</h3>
+<p>CUE中的<a href="https://pkg.go.dev/cuelang.org/go@v0.4.0" target="_blank" rel="noopener noreffer ">包</a>允许我们编写模块化、可重用和可组合的代码。我们可以定义导入到各个文件和项目的模式。如果您编写过Go，那么CUE应该会感到非常熟悉。不仅是因为它使用Go编写，而且其行为和语法也模仿了Go。</p>
+<p>CUE有许多内置包，如strings、regexp、math等等。这些内置包无需下载或安装任何其他内容就可以直接使用。第三方包是位于<code>cue.mod/pkg/</code>文件夹中并带有完全限定域名的包。</p>
+<p>在前面的几个示例中，我们包含了一个<code>import</code>语句来加载内置的<code>strings</code>包。</p>
+<h2 id="实践技巧">实践技巧</h2>
+<h3 id="数学运算符">数学运算符</h3>
+<p>CUE 包含数字的标准的数学表达式，也可以在 <code>string</code> 或 <code>list</code> 中使用乘法。在 CUE 的 <a href="https://pkg.go.dev/cuelang.org/go@v0.6.0/pkg/math" target="_blank" rel="noopener noreffer ">math package</a> 中还有其他的运算操作。</p>
+<p>
+<figure><a class="lightgallery" href="/en/posts/cue/cue-math.jpg" title="cue math" data-thumbnail="/en/posts/cue/cue-math.jpg" data-sub-html="<h2> </h2><p>cue math</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cue/cue-math.jpg"
+            data-srcset="/en/posts/cue/cue-math.jpg, /en/posts/cue/cue-math.jpg 1.5x, /en/posts/cue/cue-math.jpg 2x"
+            data-sizes="auto"
+            alt="/en/posts/cue/cue-math.jpg" width="3582" height="1042" />
+    </a><figcaption class="image-caption">cue math</figcaption>
+</figure>
+
+
+
+</p>
+<h3 id="比较运算符">比较运算符</h3>
+<p>CUE 拥有比较运算符和语义，值合并时会处理相等性检查。</p>
+<p>
+<figure><a class="lightgallery" href="/en/posts/cue/cue-compare.jpg" title="cue compare" data-thumbnail="/en/posts/cue/cue-compare.jpg" data-sub-html="<h2> </h2><p>cue compare</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cue/cue-compare.jpg"
+            data-srcset="/en/posts/cue/cue-compare.jpg, /en/posts/cue/cue-compare.jpg 1.5x, /en/posts/cue/cue-compare.jpg 2x"
+            data-sizes="auto"
+            alt="/en/posts/cue/cue-compare.jpg" width="3582" height="504" />
+    </a><figcaption class="image-caption">cue compare</figcaption>
+</figure>
+
+
+
+</p>
+<h3 id="正则表达式">正则表达式</h3>
+<p>CUE 支持正则表达式，通过 <code>=~</code> 和 <code>!~</code> 进行限制。它们基于 <a href="https://pkg.go.dev/regexp" target="_blank" rel="noopener noreffer ">Go 的正则表达式</a>， CUE 也有一些额外的 <a href="https://pkg.go.dev/cuelang.org/go@v0.6.0/pkg/regexp" target="_blank" rel="noopener noreffer ">regexp helpers</a>。</p>
+<p>
+<figure><a class="lightgallery" href="/en/posts/cue/cue-reg.jpg" title="cue reg" data-thumbnail="/en/posts/cue/cue-reg.jpg" data-sub-html="<h2> </h2><p>cue reg</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cue/cue-reg.jpg"
+            data-srcset="/en/posts/cue/cue-reg.jpg, /en/posts/cue/cue-reg.jpg 1.5x, /en/posts/cue/cue-reg.jpg 2x"
+            data-sizes="auto"
+            alt="/en/posts/cue/cue-reg.jpg" width="3580" height="452" />
+    </a><figcaption class="image-caption">cue reg</figcaption>
+</figure>
+
+
+
+</p>
+<h3 id="数字范围">数字范围</h3>
+<p>CUE里各个数字类型的范围如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kt">int8</span>      <span class="o">&gt;=-</span><span class="mi">128</span> <span class="o">&amp;</span> <span class="o">&lt;=</span><span class="mi">127</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int16</span>     <span class="o">&gt;=-</span><span class="mi">32_768</span> <span class="o">&amp;</span> <span class="o">&lt;=</span><span class="mi">32_767</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int32</span>     <span class="o">&gt;=-</span><span class="mi">2_147_483_648</span> <span class="o">&amp;</span> <span class="o">&lt;=</span><span class="mi">2_147_483_647</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int64</span>     <span class="o">&gt;=-</span><span class="mi">9_223_372_036_854_775_808</span> <span class="o">&amp;</span> <span class="o">&lt;=</span><span class="mi">9_223_372_036_854_775_807</span>
+</span></span><span class="line"><span class="cl"><span class="nx">int128</span>    <span class="o">&gt;=-</span><span class="mi">170_141_183_460_469_231_731_687_303_715_884_105_728</span> <span class="o">&amp;</span>
+</span></span><span class="line"><span class="cl">              <span class="o">&lt;=</span><span class="mi">170_141_183_460_469_231_731_687_303_715_884_105_727</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">uint</span>      <span class="o">&gt;=</span><span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="kt">uint8</span>     <span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;</span> <span class="o">&lt;=</span><span class="mi">255</span>
+</span></span><span class="line"><span class="cl"><span class="kt">uint16</span>    <span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;</span> <span class="o">&lt;=</span><span class="mi">65536</span>
+</span></span><span class="line"><span class="cl"><span class="kt">uint32</span>    <span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;</span> <span class="o">&lt;=</span><span class="mi">4_294_967_296</span>
+</span></span><span class="line"><span class="cl"><span class="kt">uint64</span>    <span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;</span> <span class="o">&lt;=</span><span class="mi">18_446_744_073_709_551_615</span>
+</span></span><span class="line"><span class="cl"><span class="nx">uint128</span>   <span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;</span> <span class="o">&lt;=</span><span class="mi">340_282_366_920_938_463_463_374_607_431_768_211_455</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">rune</span>      <span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;</span> <span class="o">&lt;=</span><span class="mh">0x10FFFF</span>
+</span></span></code></pre></div><h3 id="引用">引用</h3>
+<p>CUE 使用 (<!-- raw HTML omitted -->) 就可以 string 或 byte 中插入值。</p>
+<p>
+<figure><a class="lightgallery" href="/en/posts/cue/cue-ref.jpg" title="cue reference" data-thumbnail="/en/posts/cue/cue-ref.jpg" data-sub-html="<h2> </h2><p>cue reference</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cue/cue-ref.jpg"
+            data-srcset="/en/posts/cue/cue-ref.jpg, /en/posts/cue/cue-ref.jpg 1.5x, /en/posts/cue/cue-ref.jpg 2x"
+            data-sizes="auto"
+            alt="/en/posts/cue/cue-ref.jpg" width="3582" height="512" />
+    </a><figcaption class="image-caption">cue reference</figcaption>
+</figure>
+
+
+
+</p>
+<h3 id="field推导">Field推导</h3>
+<p>CUE 也可以通过推导生成字段，比如下图里的<code>\(app)</code>。</p>
+<p>
+<figure><a class="lightgallery" href="/en/posts/cue/cue-field-gen.jpg" title="cue field generate" data-thumbnail="/en/posts/cue/cue-field-gen.jpg" data-sub-html="<h2> </h2><p>cue field generate</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cue/cue-field-gen.jpg"
+            data-srcset="/en/posts/cue/cue-field-gen.jpg, /en/posts/cue/cue-field-gen.jpg 1.5x, /en/posts/cue/cue-field-gen.jpg 2x"
+            data-sizes="auto"
+            alt="/en/posts/cue/cue-field-gen.jpg" width="3582" height="1204" />
+    </a><figcaption class="image-caption">cue field generate</figcaption>
+</figure>
+
+
+
+</p>
+<h3 id="if">if</h3>
+<p>CUE的if与其他语言不同。它是一种理解机制，而不是分支机制。所以我们将它称为条件字段，或受保护的字段（技术上意味着保护），是另一种形式的字段推导。</p>
+<p>相对于通常意义的 if，有一些注意事项：</p>
+<ul>
+<li>没有 else 条件，必须有两个相反的判断条件</li>
+<li>对于多个检查，不会忽略任何判断条件，所有的条件都会被计算</li>
+</ul>
+<p>
+<figure><a class="lightgallery" href="/en/posts/cue/cue-if.jpg" title="cue if example" data-thumbnail="/en/posts/cue/cue-if.jpg" data-sub-html="<h2> </h2><p>cue if example</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cue/cue-if.jpg"
+            data-srcset="/en/posts/cue/cue-if.jpg, /en/posts/cue/cue-if.jpg 1.5x, /en/posts/cue/cue-if.jpg 2x"
+            data-sizes="auto"
+            alt="/en/posts/cue/cue-if.jpg" width="3582" height="1956" />
+    </a><figcaption class="image-caption">cue if example</figcaption>
+</figure>
+
+
+
+</p>
+<p>所以如果你想要一种类似if else的逻辑，可以选择2种方式：</p>
+<ol>
+<li>通过将if和else两个条件都通过if写出来，分别判断和计算；</li>
+<li>使用switch的写法实现；</li>
+</ol>
+<h3 id="switch">switch</h3>
+<p>CUE里是使用 list 推导来模拟 switch 声明：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">x</span><span class="p">:</span> <span class="nx">_</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">result</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// case
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">if</span> <span class="nx">x</span> <span class="o">==</span> <span class="s">&#34;x&#34;</span> <span class="p">{</span><span class="o">...</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// case
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// case
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// default
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="o">...</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c1">// here we select the first element
+</span></span></span></code></pre></div><p>这个模板在 list 中有很多 if 条件，然后选择第 [0] 个元素。</p>
+<p>通过这种方式，我们模拟了 switch 声明，就像其他语言一样。</p>
+<p>需要注意的是，所有的条件声明都会被求值。</p>
+<h4 id="一个简单的例子">一个简单的例子</h4>
+<p>这个例子演示如何将 integer 转为描述其数字类型的 string。</p>
+<p>
+<figure><a class="lightgallery" href="/en/posts/cue/cue-switch-example.jpg" title="cue switch example" data-thumbnail="/en/posts/cue/cue-switch-example.jpg" data-sub-html="<h2> </h2><p>cue switch example</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cue/cue-switch-example.jpg"
+            data-srcset="/en/posts/cue/cue-switch-example.jpg, /en/posts/cue/cue-switch-example.jpg 1.5x, /en/posts/cue/cue-switch-example.jpg 2x"
+            data-sizes="auto"
+            alt="/en/posts/cue/cue-switch-example.jpg" width="3582" height="540" />
+    </a><figcaption class="image-caption">cue switch example</figcaption>
+</figure>
+
+
+
+</p>
+<h4 id="顺序相关性">顺序相关性</h4>
+<p>在下面这个例子中，我们通过分解这个模板来演示，当list的结果里有多个元素时，是。</p>
+<p>真正有前缀的字符串确实能拿到正确的结果，但是我们也可以看到，当 a 和 b 一样的时候， HasPrefix 仍然可以匹配，所以我们会得到不那么准确的结果。</p>
+<p>
+<figure><a class="lightgallery" href="/en/posts/cue/cue-switch-order.jpg" title="cue switch order" data-thumbnail="/en/posts/cue/cue-switch-order.jpg" data-sub-html="<h2> </h2><p>cue switch order</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cue/cue-switch-order.jpg"
+            data-srcset="/en/posts/cue/cue-switch-order.jpg, /en/posts/cue/cue-switch-order.jpg 1.5x, /en/posts/cue/cue-switch-order.jpg 2x"
+            data-sizes="auto"
+            alt="/en/posts/cue/cue-switch-order.jpg" width="3582" height="834" />
+    </a><figcaption class="image-caption">cue switch order</figcaption>
+</figure>
+
+
+
+</p>
+<h4 id="没有条件被命中">没有条件被命中</h4>
+<p>我们可以修改一下我们第一个例子来演示如果忘记 default 默认值的话会发生什么，或未覆盖所有条件的话会发生什么。</p>
+<p>
+<figure><a class="lightgallery" href="/en/posts/cue/cue-switch-none-example.jpg" title="cue switch none example" data-thumbnail="/en/posts/cue/cue-switch-none-example.jpg" data-sub-html="<h2> </h2><p>cue switch none example</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cue/cue-switch-none-example.jpg"
+            data-srcset="/en/posts/cue/cue-switch-none-example.jpg, /en/posts/cue/cue-switch-none-example.jpg 1.5x, /en/posts/cue/cue-switch-none-example.jpg 2x"
+            data-sizes="auto"
+            alt="/en/posts/cue/cue-switch-none-example.jpg" width="3580" height="448" />
+    </a><figcaption class="image-caption">cue switch none example</figcaption>
+</figure>
+
+
+
+</p>
+<h4 id="所有条件都会检查">所有条件都会检查</h4>
+<p>你可能会觉得下面的例子能正常运行而不会报错。</p>
+<p>这是所有if条件都被检查引起的，也就是说，即使前面的某个if条件命中了，后面的if条件也会继续检查，跟前面if章节一样。</p>
+<p>
+<figure><a class="lightgallery" href="/en/posts/cue/cue-switch-all-condition.jpg" title="cue switch all condition" data-thumbnail="/en/posts/cue/cue-switch-all-condition.jpg" data-sub-html="<h2> </h2><p>cue switch all condition</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cue/cue-switch-all-condition.jpg"
+            data-srcset="/en/posts/cue/cue-switch-all-condition.jpg, /en/posts/cue/cue-switch-all-condition.jpg 1.5x, /en/posts/cue/cue-switch-all-condition.jpg 2x"
+            data-sizes="auto"
+            alt="/en/posts/cue/cue-switch-all-condition.jpg" width="3582" height="412" />
+    </a><figcaption class="image-caption">cue switch all condition</figcaption>
+</figure>
+
+
+
+</p>
+<h3 id="list推导">List推导</h3>
+<p>CUE 可以通过 list 推导动态生成 list，可以遍历 list 或 struct 的字段。</p>
+<p>形式是 [ for key, val in <!-- raw HTML omitted --> [condition] { production } ]</p>
+<ul>
+<li>key 是 lists 的索引, 在 struct 中是字段的名称。</li>
+</ul>
+<p>下面是一个简单的例子：</p>
+<p>
+<figure><a class="lightgallery" href="/en/posts/cue/cue-list-simple.jpg" title="cue list simple example" data-thumbnail="/en/posts/cue/cue-list-simple.jpg" data-sub-html="<h2> </h2><p>cue list simple example</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cue/cue-list-simple.jpg"
+            data-srcset="/en/posts/cue/cue-list-simple.jpg, /en/posts/cue/cue-list-simple.jpg 1.5x, /en/posts/cue/cue-list-simple.jpg 2x"
+            data-sizes="auto"
+            alt="/en/posts/cue/cue-list-simple.jpg" width="3582" height="880" />
+    </a><figcaption class="image-caption">cue list simple example</figcaption>
+</figure>
+
+
+
+</p>
+<p>下面是一个稍复杂的例子：</p>
+<p>
+<figure><a class="lightgallery" href="/en/posts/cue/cue-list-complex.jpg" title="cue list complex example" data-thumbnail="/en/posts/cue/cue-list-complex.jpg" data-sub-html="<h2> </h2><p>cue list complex example</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cue/cue-list-complex.jpg"
+            data-srcset="/en/posts/cue/cue-list-complex.jpg, /en/posts/cue/cue-list-complex.jpg 1.5x, /en/posts/cue/cue-list-complex.jpg 2x"
+            data-sizes="auto"
+            alt="/en/posts/cue/cue-list-complex.jpg" width="3580" height="1836" />
+    </a><figcaption class="image-caption">cue list complex example</figcaption>
+</figure>
+
+
+
+</p>
+<hr>
+<h2 id="参考文档">参考文档</h2>
+<ul>
+<li><a href="https://cuelang.org/play/#cue@export@cue" target="_blank" rel="noopener noreffer ">CUE Playground</a></li>
+<li><a href="https://cuelang.org/docs/" target="_blank" rel="noopener noreffer ">CUE官方文档</a></li>
+<li><a href="https://cuetorials.com/" target="_blank" rel="noopener noreffer ">CUE Cuetorials</a></li>
+<li><a href="https://pkg.go.dev/cuelang.org/go@v0.4.0" target="_blank" rel="noopener noreffer ">CUE Packages</a></li>
+<li><a href="https://docs.dagger.io/1215/what-is-cue/" target="_blank" rel="noopener noreffer ">Dagger - What is CUE?</a></li>
+</ul>
+<div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+        <label class="qr-code-image" for="reward">
+            <img class="image" src="/images/sponsor-Wechat.jpg">
+            <span>微信赞助</span>
+        </label>
+        <label class="qr-code-image" for="reward">
+            <img class="image" src="/images/sponsor-Alipay.jpg">
+            <span>支付宝赞助</span>
+        </label>
+    </div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-09-06</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:1313/en/posts/cue/" data-title="CUE：从入门到实践" data-hashtags="cue"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/en/posts/cue/" data-hashtag="cue"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/en/posts/cue/" data-title="CUE：从入门到实践"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:1313/en/posts/cue/" data-title="CUE：从入门到实践"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/en/posts/cue/" data-title="CUE：从入门到实践"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/cue/">cue</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/en/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/en/posts/blog/" class="prev" rel="prev" title="如何用Hugo &#43; GitHub Pages &#43; Giscus搭建个人博客"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>如何用Hugo + GitHub Pages + Giscus搭建个人博客</a>
+            <a href="/en/posts/qwen/" class="next" rel="next" title="通义千问-初体验">通义千问-初体验<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.118.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://www.ggsmida.com/" target="_blank">junwu.gjw</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+                    <span class="icp">京ICP备17005038号-1</span></div>
+    
+        
+        <script async src=" //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js "></script>
+    
+
+    
+        
+            <section>
+                
+                    <span id="busuanzi_container_value_site_pv"><i class="far fa-eye fa-fw"></i>
+                        
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+
+                
+                    &nbsp;|&nbsp;
+                
+
+                
+                    <span id="busuanzi_container_value_site_uv"><i class="fa fa-user"></i>
+                        
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+            </section>
+            
+
+            
+            
+    
+</div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDOKPNBbs4CZEow","darkTheme":"dark_dimmed","emitMetadata":"0","inputPosition":"bottom","lang":"zh-CN","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"gjw0317/giscus","repoId":"R_kgDOKPNBbg"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.25ab66029f0838f9b697628561cf55c5.js" integrity="md5-JatmAp8IOPm2l2KFYc9VxQ=="></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script><script type="text/javascript" src="/js/custom.js"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?3264615465f84dcd08c92ca935f72f38";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script></body>
+</html>

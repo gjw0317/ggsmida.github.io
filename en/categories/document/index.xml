@@ -4,5 +4,45 @@
         <link>http://localhost:1313/en/categories/document/</link>
         <description>Document - Category - ggsmida&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>g_gsmida@163.com (junwu.gjw)</managingEditor>
-            <webMaster>g_gsmida@163.com (junwu.gjw)</webMaster><atom:link href="http://localhost:1313/en/categories/document/" rel="self" type="application/rss+xml" /></channel>
+            <webMaster>g_gsmida@163.com (junwu.gjw)</webMaster><lastBuildDate>Sun, 13 Oct 2024 23:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/en/categories/document/" rel="self" type="application/rss+xml" /><item>
+    <title>小火箭</title>
+    <link>http://localhost:1313/en/posts/tools/</link>
+    <pubDate>Sun, 13 Oct 2024 23:00:00 &#43;0000</pubDate>
+    <author>junwu.gjw</author>
+    <guid>http://localhost:1313/en/posts/tools/</guid>
+    <description><![CDATA[准备vps 这次是在腾讯云上买的199续费同价的2C4G境外实例，新加坡的。 OS选择的CentOS 7.6，Ubuntu也是可以的，其它就不推荐]]></description>
+</item>
+<item>
+    <title>使用CDN加速Github Pages踩坑之循环重定向</title>
+    <link>http://localhost:1313/en/posts/cdn/</link>
+    <pubDate>Mon, 18 Sep 2023 22:00:00 &#43;0000</pubDate>
+    <author>junwu.gjw</author>
+    <guid>http://localhost:1313/en/posts/cdn/</guid>
+    <description><![CDATA[用Github Pages部署发布个人博客虽然免费，但是它在国内的访问速度实在令人不敢恭维，于是想着用CDN加速下，结果一顿操作完访问不了，排查发现域名循环重定向了。那么它是怎么产生的？又该怎么解决呢？]]></description>
+</item>
+<item>
+    <title>通义千问-初体验</title>
+    <link>http://localhost:1313/en/posts/qwen/</link>
+    <pubDate>Wed, 13 Sep 2023 22:00:00 &#43;0000</pubDate>
+    <author>junwu.gjw</author>
+    <guid>http://localhost:1313/en/posts/qwen/</guid>
+    <description><![CDATA[阿里通义千问模型最近发布了，特地体验了下，通义千问是达摩院自主研发的超大规模语言模型，能够回答问题、创作文字，还能表达观点、撰写代码。]]></description>
+</item>
+<item>
+    <title>CUE：从入门到实践</title>
+    <link>http://localhost:1313/en/posts/cue/</link>
+    <pubDate>Wed, 06 Sep 2023 12:00:00 &#43;0000</pubDate>
+    <author>junwu.gjw</author>
+    <guid>http://localhost:1313/en/posts/cue/</guid>
+    <description><![CDATA[CUE是Google多年编写配置语言的经验的结果，旨在提高开发人员的体验，同时避免一些棘手的陷阱。它是JSON的超集，具有额外的功能，使声明性、数据驱动的编程与常规命令式编程一样愉快和高效。]]></description>
+</item>
+<item>
+    <title>如何用Hugo &#43; GitHub Pages &#43; Giscus搭建个人博客</title>
+    <link>http://localhost:1313/en/posts/blog/</link>
+    <pubDate>Mon, 04 Sep 2023 14:00:00 &#43;0000</pubDate>
+    <author>junwu.gjw</author>
+    <guid>http://localhost:1313/en/posts/blog/</guid>
+    <description><![CDATA[简介 Hugo Hugo 是一个基于Go语言的静态网页生成器，它可以帮助我们快速创建出具有高度优化性能的静态网站。Hugo具有简单易用的特点，而且支持各种主题]]></description>
+</item>
+</channel>
 </rss>

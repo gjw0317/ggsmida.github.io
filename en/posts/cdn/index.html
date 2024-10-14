@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>使用CDN加速Github Pages踩坑之循环重定向 - ggsmida&#39;s blog</title><meta name="Description" content="用CDN加速Github Pages时遇到循环重定向问题。"><meta property="og:title" content="使用CDN加速Github Pages踩坑之循环重定向" />
+<meta property="og:description" content="用CDN加速Github Pages时遇到循环重定向问题。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/en/posts/cdn/" /><meta property="og:image" content="http://localhost:1313/en/posts/cdn/featured-image-preview.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-09-18T22:00:00+00:00" />
+<meta property="article:modified_time" content="2023-09-18T22:00:00+00:00" /><meta property="og:site_name" content="ggsmida&#39;s blog" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/en/posts/cdn/featured-image-preview.jpg"/>
+<meta name="twitter:title" content="使用CDN加速Github Pages踩坑之循环重定向"/>
+<meta name="twitter:description" content="用CDN加速Github Pages时遇到循环重定向问题。"/>
+<meta name="application-name" content="我的网站">
+<meta name="apple-mobile-web-app-title" content="我的网站"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/en/posts/cdn/" /><link rel="prev" href="http://localhost:1313/en/posts/qwen/" /><link rel="next" href="http://localhost:1313/en/posts/tools/" /><link rel="stylesheet" href="/css/style.min.9ca2d55458092985b485ef6ca46fac48.css" integrity="md5-nKLVVFgJKYW0he9spG+sSA=="><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><meta name="google-site-verification" content="uIbwLKXuYcSitCPCNRoodARJN_lHUtTOn3sozNSIY-8" /><meta name="baidu-site-verification" content="codeva-kCQIEMsvsM" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "使用CDN加速Github Pages踩坑之循环重定向",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/en\/posts\/cdn\/"
+        },"genre": "posts","keywords": "CDN","wordcount":  1322 ,
+        "url": "http:\/\/localhost:1313\/en\/posts\/cdn\/","datePublished": "2023-09-18T22:00:00+00:00","dateModified": "2023-09-18T22:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "junwu.gjw"
+            },"description": "用CDN加速Github Pages时遇到循环重定向问题。"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/en/" title="ggsmida&#39;s blog">ggsmida&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/en/posts/"> Posts </a><a class="menu-item" href="/en/tags/"> Tags </a><a class="menu-item" href="/en/categories/"> Categories </a><a class="menu-item" href="/en/favorites/"> Favorites </a><a class="menu-item" href="/en/about/"> About </a><a class="menu-item" href="/en/sponsor/"> Sponsor </a><a class="menu-item" href="https://github.com/gjw0317/gjw0317.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/posts/cdn/">简体中文</option><option value="/en/posts/cdn/" selected>English</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/en/" title="ggsmida&#39;s blog">ggsmida&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/en/posts/" title="">Posts</a><a class="menu-item" href="/en/tags/" title="">Tags</a><a class="menu-item" href="/en/categories/" title="">Categories</a><a class="menu-item" href="/en/favorites/" title="">Favorites</a><a class="menu-item" href="/en/about/" title="">About</a><a class="menu-item" href="/en/sponsor/" title="">Sponsor</a><a class="menu-item" href="https://github.com/gjw0317/gjw0317.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/posts/cdn/">简体中文</option><option value="/en/posts/cdn/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+    <h2 class="toc-title">Contents</h2>
+    <div class="toc-content always-active" id="toc-content-auto"></div>
+</div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">使用CDN加速Github Pages踩坑之循环重定向</h1><div class="post-meta">
+        <div class="post-meta-line"><span class="post-author"><a href="http://www.ggsmida.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>junwu.gjw</a></span>&nbsp;<span class="post-category">included in <a href="/en/categories/document/"><i class="far fa-folder fa-fw"
+                    aria-hidden="true"></i>Document</a></span></div>
+        <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-09-18">2023-09-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1322 words&nbsp;
+            <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;
+    
+
+    
+        
+
+            
+            
+            <span id="busuanzi_container_value_page_pv"><i class="far fa-eye fa-fw"></i>
+                
+                <span id="busuanzi_value_page_pv"></span>&nbsp;views</span>
+        
+    
+</div>
+    </div><div class="details toc" id="toc-static" data-kept="">
+        <div class="details-summary toc-title">
+            <span>Contents</span>
+            <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#踩坑过程">踩坑过程</a></li>
+    <li><a href="#分析--解决">分析 &amp; 解决</a>
+      <ul>
+        <li><a href="#现状">现状</a></li>
+        <li><a href="#分析">分析</a></li>
+        <li><a href="#解决方案">解决方案</a></li>
+      </ul>
+    </li>
+    <li><a href="#附录">附录</a>
+      <ul>
+        <li><a href="#dns解析">DNS解析</a></li>
+        <li><a href="#cdn-域名加速">CDN 域名加速</a></li>
+        <li><a href="#github-pages-的-custom-domain">GitHub Pages 的 Custom domain</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+    </div><div class="content" id="content"><h2 id="踩坑过程">踩坑过程</h2>
+<p>用Github Pages部署发布个人博客虽然免费，但是它在国内的访问速度实在令人不敢恭维，于是想着用CDN加速下，看到腾讯云有100G免费流量，所以试用了下，结果一顿操作完博客访问不了了。</p>
+<p>开始以为是DNS、CDN、浏览器缓存等问题，各种刷新、删除缓存操作弄完并没有什么用，一度怀疑Github Pages自己挂了，于是访问了下Github Pages自己的博客域名，结果发现域名重定向为我自定义的域名了，不禁产生怀疑：这岂不是循环了？</p>
+<h2 id="分析--解决">分析 &amp; 解决</h2>
+<h3 id="现状">现状</h3>
+<p>为方便描述问题，先介绍下涉及的2个域名：</p>
+<ol>
+<li>自定义的博客域名：<a href="www.ggsmida.com" rel="">www.ggsmida.com</a></li>
+<li>Github Pages原始的域名：<a href="gjw0317.github.io" rel="">gjw0317.github.io</a></li>
+</ol>
+<p>由于是第一次使用CDN，配置CDN时就一直没弄明白里面的源站里为什么有2个地址：<strong>源站地址</strong>、<strong>回源HOST</strong>。许多网上资料都是建议配置成一样的，所以当前的源站配置里，我的源站地址和回源HOST都是配置的<a href="gjw0317.github.io" rel="">gjw0317.github.io</a>，完整配置如下图：
+
+<figure><a class="lightgallery" href="/en/posts/cdn/cdn-1.jpg" title="错误的源站配置" data-thumbnail="/en/posts/cdn/cdn-1.jpg" data-sub-html="<h2> </h2><p>错误的源站配置</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cdn/cdn-1.jpg"
+            data-srcset="/en/posts/cdn/cdn-1.jpg, /en/posts/cdn/cdn-1.jpg 1.5x, /en/posts/cdn/cdn-1.jpg 2x"
+            data-sizes="auto"
+            alt="/en/posts/cdn/cdn-1.jpg" width="2720" height="1544" />
+    </a><figcaption class="image-caption">错误的源站配置</figcaption>
+</figure>
+
+
+
+</p>
+<p>Github Pages里配置的&quot;Custom domain&quot;是<a href="www.ggsmida.com" rel="">www.ggsmida.com</a>，如下图：
+
+<figure><a class="lightgallery" href="/en/posts/cdn/cdn-github.jpg" title="Github Pages Custom domain" data-thumbnail="/en/posts/cdn/cdn-github.jpg" data-sub-html="<h2> </h2><p>Github Pages Custom domain</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cdn/cdn-github.jpg"
+            data-srcset="/en/posts/cdn/cdn-github.jpg, /en/posts/cdn/cdn-github.jpg 1.5x, /en/posts/cdn/cdn-github.jpg 2x"
+            data-sizes="auto"
+            alt="/en/posts/cdn/cdn-github.jpg" width="1660" height="598" />
+    </a><figcaption class="image-caption">Github Pages Custom domain</figcaption>
+</figure>
+
+
+
+</p>
+<h3 id="分析">分析</h3>
+<p>多年的工作经验告诉我们一个道理，哪里没弄清楚，问问往往就来自哪里。 所以查了下这两个概念的作用，如下：当CDN服务器要访问源站时，是根据<strong>源站地址</strong>去向源站发送请求的，而回源HOST是用于设置发送请求时所使用的HOST头部信息，可以简单理解为源站会根据HOST头部信息来获取这次请求要访问的目标地址。</p>
+<p>那么循环重定向是怎么产生的呢？</p>
+<p>这是由于一旦Github Pages里配置了&quot;Custom domain&quot;后，所有访问<a href="gjw0317.github.io" rel="">gjw0317.github.io</a>的请求就都会被重定向到<a href="www.ggsmida.com" rel="">www.ggsmida.com</a>，反过来则不会（除非你自己额外配置了这条DNS解析方向）。</p>
+<p>所以当我们访问<a href="www.ggsmida.com" rel="">www.ggsmida.com</a>时，会先经过DNS CNAME解析到CDN的域名，进而CDN服务器又会向源站发送请求，此时因为Github Pages服务器从请求头里拿到的你要访问的地址是<a href="gjw0317.github.io" rel="">gjw0317.github.io</a>，所以它又把请求重定向到<a href="www.ggsmida.com" rel="">www.ggsmida.com</a>，于是CDN服务器将这个重定向请求返回给了我们，之后我们又再次重复了前面的访问链路，从而整体产生了循环重定向。</p>
+<p>经过上面的解释，你会发现问题就出在Github Pages认为我们要访问的是<a href="gjw0317.github.io" rel="">gjw0317.github.io</a>，而不是<a href="www.ggsmida.com" rel="">www.ggsmida.com</a>，导致产生了重定向。而这个就是由&quot;回源HOST&quot;这个配置项控制的。</p>
+<p>
+<figure><a class="lightgallery" href="/en/posts/cdn/cdn-network-error.png" title="错误的请求链路" data-thumbnail="/en/posts/cdn/cdn-network-error.png" data-sub-html="<h2> </h2><p>错误的请求链路</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cdn/cdn-network-error.png"
+            data-srcset="/en/posts/cdn/cdn-network-error.png, /en/posts/cdn/cdn-network-error.png 1.5x, /en/posts/cdn/cdn-network-error.png 2x"
+            data-sizes="auto"
+            alt="/en/posts/cdn/cdn-network-error.png" width="1778" height="882" />
+    </a><figcaption class="image-caption">错误的请求链路</figcaption>
+</figure>
+
+
+
+</p>
+<h3 id="解决方案">解决方案</h3>
+<p>综上分析可以得出。解决办法就是，将&quot;回源HOST&quot;设置为自定义的博客域名：<a href="www.ggsmida.com" rel="">www.ggsmida.com</a>。</p>
+<p>
+<figure><a class="lightgallery" href="/en/posts/cdn/cdn-network-correct.png" title="正确的请求链路" data-thumbnail="/en/posts/cdn/cdn-network-correct.png" data-sub-html="<h2> </h2><p>正确的请求链路</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cdn/cdn-network-correct.png"
+            data-srcset="/en/posts/cdn/cdn-network-correct.png, /en/posts/cdn/cdn-network-correct.png 1.5x, /en/posts/cdn/cdn-network-correct.png 2x"
+            data-sizes="auto"
+            alt="/en/posts/cdn/cdn-network-correct.png" width="1740" height="806" />
+    </a><figcaption class="image-caption">正确的请求链路</figcaption>
+</figure>
+
+
+
+</p>
+<h2 id="附录">附录</h2>
+<p>最后附上完整的配置，供大家参考，注意全链路都是www，如果你不用www的域名话，全链路也都不要用，保持一致。</p>
+<h3 id="dns解析">DNS解析</h3>
+<p>自定义博客的域名境内 CNAME 到 CDN 的域名，境外 CNAME 到 Github Pages 的原始域名。
+
+<figure><a class="lightgallery" href="/en/posts/cdn/cdn-dns.png" title="个人博客域名CNAME到CDN域名" data-thumbnail="/en/posts/cdn/cdn-dns.png" data-sub-html="<h2> </h2><p>个人博客域名CNAME到CDN域名</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cdn/cdn-dns.png"
+            data-srcset="/en/posts/cdn/cdn-dns.png, /en/posts/cdn/cdn-dns.png 1.5x, /en/posts/cdn/cdn-dns.png 2x"
+            data-sizes="auto"
+            alt="/en/posts/cdn/cdn-dns.png" width="2792" height="892" />
+    </a><figcaption class="image-caption">个人博客域名CNAME到CDN域名</figcaption>
+</figure>
+
+
+
+</p>
+<h3 id="cdn-域名加速">CDN 域名加速</h3>
+<p>创建CDN域名加速。
+
+<figure><a class="lightgallery" href="/en/posts/cdn/cdn-cdn.png" title="CDN加速域名" data-thumbnail="/en/posts/cdn/cdn-cdn.png" data-sub-html="<h2> </h2><p>CDN加速域名</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cdn/cdn-cdn.png"
+            data-srcset="/en/posts/cdn/cdn-cdn.png, /en/posts/cdn/cdn-cdn.png 1.5x, /en/posts/cdn/cdn-cdn.png 2x"
+            data-sizes="auto"
+            alt="/en/posts/cdn/cdn-cdn.png" width="1455" height="1206" />
+    </a><figcaption class="image-caption">CDN加速域名</figcaption>
+</figure>
+
+
+
+</p>
+<h3 id="github-pages-的-custom-domain">GitHub Pages 的 Custom domain</h3>
+<p>GitHub Pages上设置个人域名。
+
+<figure><a class="lightgallery" href="/en/posts/cdn/cdn-github.jpg" title="Github Pages Custom domain" data-thumbnail="/en/posts/cdn/cdn-github.jpg" data-sub-html="<h2> </h2><p>Github Pages Custom domain</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/en/posts/cdn/cdn-github.jpg"
+            data-srcset="/en/posts/cdn/cdn-github.jpg, /en/posts/cdn/cdn-github.jpg 1.5x, /en/posts/cdn/cdn-github.jpg 2x"
+            data-sizes="auto"
+            alt="/en/posts/cdn/cdn-github.jpg" width="1660" height="598" />
+    </a><figcaption class="image-caption">Github Pages Custom domain</figcaption>
+</figure>
+
+
+
+</p>
+<div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+        <label class="qr-code-image" for="reward">
+            <img class="image" src="/images/sponsor-Wechat.jpg">
+            <span>微信赞助</span>
+        </label>
+        <label class="qr-code-image" for="reward">
+            <img class="image" src="/images/sponsor-Alipay.jpg">
+            <span>支付宝赞助</span>
+        </label>
+    </div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-09-18</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:1313/en/posts/cdn/" data-title="使用CDN加速Github Pages踩坑之循环重定向" data-hashtags="CDN"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/en/posts/cdn/" data-hashtag="CDN"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/en/posts/cdn/" data-title="使用CDN加速Github Pages踩坑之循环重定向"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:1313/en/posts/cdn/" data-title="使用CDN加速Github Pages踩坑之循环重定向"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/en/posts/cdn/" data-title="使用CDN加速Github Pages踩坑之循环重定向"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/en/tags/cdn/">CDN</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/en/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/en/posts/qwen/" class="prev" rel="prev" title="通义千问-初体验"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>通义千问-初体验</a>
+            <a href="/en/posts/tools/" class="next" rel="next" title="小火箭">小火箭<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.118.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://www.ggsmida.com/" target="_blank">junwu.gjw</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+                    <span class="icp">京ICP备17005038号-1</span></div>
+    
+        
+        <script async src=" //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js "></script>
+    
+
+    
+        
+            <section>
+                
+                    <span id="busuanzi_container_value_site_pv"><i class="far fa-eye fa-fw"></i>
+                        
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+
+                
+                    &nbsp;|&nbsp;
+                
+
+                
+                    <span id="busuanzi_container_value_site_uv"><i class="fa fa-user"></i>
+                        
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+            </section>
+            
+
+            
+            
+    
+</div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDOKPNBbs4CZEow","darkTheme":"dark_dimmed","emitMetadata":"0","inputPosition":"bottom","lang":"zh-CN","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"gjw0317/giscus","repoId":"R_kgDOKPNBbg"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.25ab66029f0838f9b697628561cf55c5.js" integrity="md5-JatmAp8IOPm2l2KFYc9VxQ=="></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script><script type="text/javascript" src="/js/custom.js"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?3264615465f84dcd08c92ca935f72f38";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script></body>
+</html>

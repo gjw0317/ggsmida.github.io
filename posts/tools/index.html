@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>小火箭 - ggsmida的博客</title><meta name="Description" content="用小火箭搭梯子"><meta property="og:title" content="小火箭" />
+<meta property="og:description" content="用小火箭搭梯子" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/tools/" /><meta property="og:image" content="http://localhost:1313/images/profile.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-10-13T23:00:00+00:00" />
+<meta property="article:modified_time" content="2024-10-13T23:00:00+00:00" /><meta property="og:site_name" content="ggsmida&#39;s blog" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/profile.jpg"/>
+
+<meta name="twitter:title" content="小火箭"/>
+<meta name="twitter:description" content="用小火箭搭梯子"/>
+<meta name="application-name" content="我的网站">
+<meta name="apple-mobile-web-app-title" content="我的网站"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/posts/tools/" /><link rel="prev" href="http://localhost:1313/posts/cdn/" /><link rel="stylesheet" href="/css/style.min.9ca2d55458092985b485ef6ca46fac48.css" integrity="md5-nKLVVFgJKYW0he9spG+sSA=="><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><meta name="google-site-verification" content="uIbwLKXuYcSitCPCNRoodARJN_lHUtTOn3sozNSIY-8" /><meta name="baidu-site-verification" content="codeva-kCQIEMsvsM" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "小火箭",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/posts\/tools\/"
+        },"genre": "posts","keywords": "tools, shadowsocks","wordcount":  857 ,
+        "url": "http:\/\/localhost:1313\/posts\/tools\/","datePublished": "2024-10-13T23:00:00+00:00","dateModified": "2024-10-13T23:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "junwu.gjw"
+            },"description": "用小火箭搭梯子"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="ggsmida的博客">ggsmida&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/favorites/"> 收藏 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="/sponsor/"> 赞助 </a><a class="menu-item" href="https://github.com/gjw0317/gjw0317.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/posts/tools/" selected>简体中文</option><option value="/en/posts/tools/">English</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="ggsmida的博客">ggsmida&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/favorites/" title="">收藏</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="/sponsor/" title="">赞助</a><a class="menu-item" href="https://github.com/gjw0317/gjw0317.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/posts/tools/" selected>简体中文</option><option value="/en/posts/tools/">English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+    <h2 class="toc-title">目录</h2>
+    <div class="toc-content always-active" id="toc-content-auto"></div>
+</div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">小火箭</h1><div class="post-meta">
+        <div class="post-meta-line"><span class="post-author"><a href="http://www.ggsmida.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>junwu.gjw</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/document/"><i class="far fa-folder fa-fw"
+                    aria-hidden="true"></i>文档</a></span></div>
+        <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-10-13">2024-10-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 857 字&nbsp;
+            <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;
+    
+
+    
+        
+
+            
+            
+            <span id="busuanzi_container_value_page_pv"><i class="far fa-eye fa-fw"></i>
+                
+                <span id="busuanzi_value_page_pv"></span>&nbsp;次阅读</span>
+        
+    
+</div>
+    </div><div class="details toc" id="toc-static" data-kept="">
+        <div class="details-summary toc-title">
+            <span>目录</span>
+            <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#准备vps">准备vps</a></li>
+    <li><a href="#安装bbr">安装bbr</a></li>
+    <li><a href="#安装shadowsocks服务端">安装shadowsocks服务端</a></li>
+    <li><a href="#安装shadowsocks客户端">安装shadowsocks客户端</a></li>
+    <li><a href="#测试">测试</a></li>
+  </ul>
+</nav></div>
+    </div><div class="content" id="content"><h2 id="准备vps">准备vps</h2>
+<p>这次是在腾讯云上买的199续费同价的2C4G境外实例，新加坡的。</p>
+<p>OS选择的CentOS 7.6，Ubuntu也是可以的，其它就不推荐了，会有很多安装包下载适配的问题。</p>
+<p>
+<figure><a class="lightgallery" href="/posts/tools/image.png" title="alt text" data-thumbnail="/posts/tools/image.png" data-sub-html="<h2> </h2><p>alt text</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/posts/tools/image.png"
+            data-srcset="/posts/tools/image.png, /posts/tools/image.png 1.5x, /posts/tools/image.png 2x"
+            data-sizes="auto"
+            alt="/posts/tools/image.png" width="282" height="414" />
+    </a><figcaption class="image-caption">alt text</figcaption>
+</figure>
+
+
+
+</p>
+<h2 id="安装bbr">安装bbr</h2>
+<p>BBR 开启，可以起到加速作用。如果用的是 CentOS 8 或者 Ubuntu 18 的话，可能都不需要开启，因为默认就开启了。</p>
+<p>BBR 一键安装：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh <span class="o">&amp;&amp;</span> chmod +x bbr.sh <span class="o">&amp;&amp;</span> ./bbr.sh
+</span></span></code></pre></div><p>安装过程，需要重启机器一次。重启之后，输入 <code>lsmod | grep bbr</code> 看到输出有 <code>bbr</code> 则代表 OK 了。</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://github.com/lyf3/ss/issues/1" target="_blank" rel="noopener noreffer ">上网配置</a> bbr 开启和 ssr 搭建</li>
+<li><a href="https://www.moerats.com/archives/612/" target="_blank" rel="noopener noreffer ">Ubuntu 18.04/18.10快速开启Google BBR的方法</a></li>
+</ul>
+<h2 id="安装shadowsocks服务端">安装shadowsocks服务端</h2>
+<p>安装 shadowsocks：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
+</span></span><span class="line"><span class="cl">chmod +x shadowsocks-all.sh
+</span></span><span class="line"><span class="cl">./shadowsocks-all.sh 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> tee shadowsocks-all.log
+</span></span></code></pre></div><p>建议选择 Shadowsocks-libev 版本，设置好端口、密码，选择加载 simple-obfs 插件并选择 tls 选项，这样流量会加密，降低被封的概率。</p>
+<p>卸载的命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./shadowsocks-all.sh uninstall
+</span></span></code></pre></div><p>shadowsocks 服务端相关配置</p>
+<p>启动脚本后面的参数含义，从左至右依次为：启动，停止，重启，查看状态。</p>
+<ul>
+<li>Shadowsocks-Python 版：/etc/init.d/shadowsocks-python start | stop | restart | status</li>
+<li>ShadowsocksR 版：/etc/init.d/shadowsocks-r start | stop | restart | status</li>
+<li>Shadowsocks-Go 版：/etc/init.d/shadowsocks-go start | stop | restart | status</li>
+<li>Shadowsocks-libev 版：/etc/init.d/shadowsocks-libev start | stop | restart | status</li>
+</ul>
+<p>配置文件路径：</p>
+<pre tabindex="0"><code>Shadowsocks-Python 版：
+/etc/shadowsocks-python/config.json
+
+ShadowsocksR 版：
+/etc/shadowsocks-r/config.json
+
+Shadowsocks-Go 版：
+/etc/shadowsocks-go/config.json
+
+Shadowsocks-libev 版：
+/etc/shadowsocks-libev/config.json
+</code></pre><p><code>netstat -nl | grep 12250</code> 或 <code>ss -nl | grep 12250</code> 可以查看 shadowsocks 服务的端口，12250 仅仅是示例，需要换成你自己设置的 shadowsocks 端口。</p>
+<p>shadowsocks 服务端配置参考：</p>
+<p><code>cat /etc/shadowsocks-libev/config.json</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;server&#34;</span><span class="p">:</span><span class="s2">&#34;0.0.0.0&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;server_port&#34;</span><span class="p">:</span><span class="err">xxx</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;local_port&#34;</span><span class="p">:</span> <span class="mi">1080</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;password&#34;</span><span class="p">:</span><span class="s2">&#34;yyy&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;timeout&#34;</span><span class="p">:</span><span class="mi">300</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;method&#34;</span><span class="p">:</span><span class="s2">&#34;aes-256-gcm&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;nameserver&#34;</span><span class="p">:</span><span class="s2">&#34;8.8.8.8&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;plugin&#34;</span><span class="p">:</span><span class="s2">&#34;obfs-server&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;plugin_opts&#34;</span><span class="p">:</span><span class="s2">&#34;obfs=tls&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>nameserver建议改为8.8.8.8，重启下服务生效：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl restart shadowsocks-libev.service
+</span></span></code></pre></div><p>如果没有服务，可以创建一个，方便后续运维。</p>
+<p><code>vim /etc/systemd/system/shadowsocks-libev.service</code></p>
+<pre tabindex="0"><code>[Unit]
+Description=Start or stop the Shadowsocks server
+After=network.target
+Wants=network.target
+ 
+[Service]
+Type=forking
+PIDFile=/var/run/shadowsocks.pid
+ExecStart=/usr/local/bin/ss-server -c /etc/shadowsocks-libev/config.json --pid-file /var/run/shadowsocks.pid -d start
+ExecStop=/usr/local/bin/ss-server -c /etc/shadowsocks-libev/config.json --pid-file /var/run/shadowsocks.pid -d stop
+ 
+[Install]
+WantedBy=multi-user.target
+</code></pre><h2 id="安装shadowsocks客户端">安装shadowsocks客户端</h2>
+<p>下载：</p>
+<ul>
+<li><a href="https://github.com/shadowsocks/shadowsocks-windows/releases/" target="_blank" rel="noopener noreffer ">shadowsocks(windows)</a></li>
+<li><a href="https://github.com/shadowsocks/simple-obfs/releases" target="_blank" rel="noopener noreffer ">obfs-local(windows)</a></li>
+<li>其它OS或移动端同样在github repo里找下</li>
+</ul>
+<p>解压到本地，将obfs-local目录里的文件，拷贝到shadowsocks目录下，运行shadowsocks程序。</p>
+<p>
+<figure><a class="lightgallery" href="/posts/tools/image-1.png" title="alt text" data-thumbnail="/posts/tools/image-1.png" data-sub-html="<h2> </h2><p>alt text</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/posts/tools/image-1.png"
+            data-srcset="/posts/tools/image-1.png, /posts/tools/image-1.png 1.5x, /posts/tools/image-1.png 2x"
+            data-sizes="auto"
+            alt="/posts/tools/image-1.png" width="619" height="549" />
+    </a><figcaption class="image-caption">alt text</figcaption>
+</figure>
+
+
+
+</p>
+<p>添加服务器：</p>
+<p>
+<figure><a class="lightgallery" href="/posts/tools/image-2.png" title="alt text" data-thumbnail="/posts/tools/image-2.png" data-sub-html="<h2> </h2><p>alt text</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/posts/tools/image-2.png"
+            data-srcset="/posts/tools/image-2.png, /posts/tools/image-2.png 1.5x, /posts/tools/image-2.png 2x"
+            data-sizes="auto"
+            alt="/posts/tools/image-2.png" width="468" height="471" />
+    </a><figcaption class="image-caption">alt text</figcaption>
+</figure>
+
+
+
+</p>
+<p>设置开机启动，切换至PAC模式，全局模式太耗流量了：</p>
+<p>
+<figure><a class="lightgallery" href="/posts/tools/image-3.png" title="alt text" data-thumbnail="/posts/tools/image-3.png" data-sub-html="<h2> </h2><p>alt text</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/posts/tools/image-3.png"
+            data-srcset="/posts/tools/image-3.png, /posts/tools/image-3.png 1.5x, /posts/tools/image-3.png 2x"
+            data-sizes="auto"
+            alt="/posts/tools/image-3.png" width="335" height="268" />
+    </a><figcaption class="image-caption">alt text</figcaption>
+</figure>
+
+
+
+</p>
+<h2 id="测试">测试</h2>
+<p>成功访问youtube。</p>
+<p>
+<figure><a class="lightgallery" href="/posts/tools/image-4.png" title="alt text" data-thumbnail="/posts/tools/image-4.png" data-sub-html="<h2> </h2><p>alt text</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/posts/tools/image-4.png"
+            data-srcset="/posts/tools/image-4.png, /posts/tools/image-4.png 1.5x, /posts/tools/image-4.png 2x"
+            data-sizes="auto"
+            alt="/posts/tools/image-4.png" width="1738" height="404" />
+    </a><figcaption class="image-caption">alt text</figcaption>
+</figure>
+
+
+
+</p>
+<div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+        <label class="qr-code-image" for="reward">
+            <img class="image" src="/images/sponsor-Wechat.jpg">
+            <span>微信赞助</span>
+        </label>
+        <label class="qr-code-image" for="reward">
+            <img class="image" src="/images/sponsor-Alipay.jpg">
+            <span>支付宝赞助</span>
+        </label>
+    </div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-10-13</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://localhost:1313/posts/tools/" data-title="小火箭" data-hashtags="tools,shadowsocks"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/tools/" data-hashtag="tools"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/posts/tools/" data-title="小火箭"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://localhost:1313/posts/tools/" data-title="小火箭"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/tools/" data-title="小火箭"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/tools/">工具</a>,&nbsp;<a href="/tags/shadowsocks/">shadowsocks</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/cdn/" class="prev" rel="prev" title="使用CDN加速Github Pages踩坑之循环重定向"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>使用CDN加速Github Pages踩坑之循环重定向</a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.118.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="http://www.ggsmida.com/" target="_blank">junwu.gjw</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+                    <span class="icp">京ICP备17005038号-1</span></div>
+    
+        
+        <script async src=" //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js "></script>
+    
+
+    
+        
+            <section>
+                
+                    <span id="busuanzi_container_value_site_pv"><i class="far fa-eye fa-fw"></i>
+                        
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+
+                
+                    &nbsp;|&nbsp;
+                
+
+                
+                    <span id="busuanzi_container_value_site_uv"><i class="fa fa-user"></i>
+                        
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+            </section>
+            
+
+            
+            
+    
+</div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDOKPNBbs4CZEow","darkTheme":"dark_dimmed","emitMetadata":"0","inputPosition":"bottom","lang":"zh-CN","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"gjw0317/giscus","repoId":"R_kgDOKPNBbg"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.25ab66029f0838f9b697628561cf55c5.js" integrity="md5-JatmAp8IOPm2l2KFYc9VxQ=="></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script><script type="text/javascript" src="/js/custom.js"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?3264615465f84dcd08c92ca935f72f38";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script></body>
+</html>

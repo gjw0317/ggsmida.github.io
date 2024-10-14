@@ -4,5 +4,13 @@
         <link>http://localhost:1313/en/tags/ai/</link>
         <description>AI - Tag - ggsmida&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>g_gsmida@163.com (junwu.gjw)</managingEditor>
-            <webMaster>g_gsmida@163.com (junwu.gjw)</webMaster><atom:link href="http://localhost:1313/en/tags/ai/" rel="self" type="application/rss+xml" /></channel>
+            <webMaster>g_gsmida@163.com (junwu.gjw)</webMaster><lastBuildDate>Wed, 13 Sep 2023 22:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/ai/" rel="self" type="application/rss+xml" /><item>
+    <title>通义千问-初体验</title>
+    <link>http://localhost:1313/en/posts/qwen/</link>
+    <pubDate>Wed, 13 Sep 2023 22:00:00 &#43;0000</pubDate>
+    <author>junwu.gjw</author>
+    <guid>http://localhost:1313/en/posts/qwen/</guid>
+    <description><![CDATA[阿里通义千问模型最近发布了，特地体验了下，通义千问是达摩院自主研发的超大规模语言模型，能够回答问题、创作文字，还能表达观点、撰写代码。]]></description>
+</item>
+</channel>
 </rss>
